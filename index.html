@@ -1,73 +1,70 @@
 <!doctype html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Início | Turma do Bem</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
-<body>
-    <header class ="cabecalho">
-        <div class="container cabecalho-conteudo">
-            <a
-          class="marca"
-          href="index.html"
-          aria-label="Turma do Bem - página inicial"
-          >
-           <img
-            src="imagens/logo-tdb.jpg"
-            alt=""
-            class="marca-logo"
-            width="4%"
-            > 
-          </a>
-        <nav aria-label="Navegação principal">
-            <ul class="menu">
-                <li> <a aria-label="Quem somos" href="integrantes.html">Quem somos</a></li>
-                <li> <a aria-label="Sobre" href="sobre.html">Sobre</a></li>
-                <li> <a aria-label="FAQ" href="faq.html">FAQ</a></li>
-                <li> <a aria-label="Contato" href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-        </div>
-    </header>
-
-    <main id="inicio">
-
-        <section class="hero" aria-labelledby="titulo-principal">
-            <div class="container hero-conteudo">
-            <h1 id="titulo-principal">Tecnologia a favor de mais sorrisos</h1>
-            <p class="hero-texto">
-            Nosso projeto propõe uma plataforma para apoiar a Turma do Bem na organização de informações sobre doadores, parceiros e apoiadores. Queremos facilitar o acompanhamento de doações e o relacionamento com quem contribui para a instituição, fortalecendo sua missão de promover inclusão social por meio da saúde bucal.
-            Conheça nossa proposta, a equipe responsável e as próximas etapas do projeto.
-            </p>
+    <body>
+        <!-- Cabeçalho compartilhado entre as páginas do projeto. -->
+        <header class="cabecalho">
+            <div class="container cabecalho-conteudo">
+                <a class="marca" href="index.html" aria-label="Turma do Bem - página inicial">
+                    <img src="imagens/logo-tdb.jpg" alt="" class="marca-logo" width="60">
+                </a>
+                <nav aria-label="Navegação principal">
+                    <ul class="menu">
+                        <li><a href="index.html" aria-current="page">Início</a></li>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="impacto.html">Impacto e colaboradores</a></li>
+                        <li><a href="apoio.html">Quero apoiar</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
             </div>
-        </section>
+        </header>
 
-        <article class="cartao">
-            <img src="imagens/tdb.jpg" 
-            alt="Imagem de uma jovem recebendo atendimento odontológico da Turma do Bem"
-            width = "30%"
-            />
-            <div class="cartao-conteudo">
-                <h2>Sobre a Turma do Bem</h2>
-                <p>
-                    A Turma do Bem é uma organização sem fins lucrativos que promove inclusão social por meio do acesso à saúde bucal. Seu programa Dentista do Bem mobiliza dentistas voluntários para oferecer atendimento gratuito a jovens em situação de vulnerabilidade social. Já o Apolônias do Bem oferece tratamento odontológico gratuito a mulheres que sofreram violência e tiveram a dentição afetada, contribuindo para recuperar sua saúde, autoestima e qualidade de vida.
-                </p>
-                <a href="sobre.html" class="botao">Saiba mais</a>
+        <main id="inicio">
+
+            <section class="hero" aria-labelledby="titulo-principal">
+                <div class="container hero-conteudo">
+                    <h1 id="titulo-principal">Tecnologia a favor de mais sorrisos</h1>
+                    <p class="hero-texto">
+                        Conectamos as necessidades da Turma do Bem a pessoas e empresas que querem ajudar. Conheça as histórias de impacto, encontre uma forma de contribuir e acompanhe sua oferta de apoio.
+                    </p>
+                </div>
+            </section>
+
+            <section class="proposta-projeto" aria-labelledby="titulo-diferencial">
+                <h2 id="titulo-diferencial">Da necessidade à parceria</h2>
+                <p>Conectamos histórias e resultados a novas oportunidades de apoio: pessoas e empresas conhecem as necessidades e oferecem ajuda, enquanto a equipe acompanha as ofertas e usa dados e IA para apoiar a análise. O apoio pode envolver recursos financeiros, materiais, serviços ou divulgação.</p>
+                <p>Conheça as histórias de <a href="impacto.html">impacto e colaboradores</a> e explore as <a href="apoio.html">necessidades, o formulário de oferta e o acompanhamento</a>.</p>
+            </section>
+
+            <article class="cartao">
+                <img src="imagens/tdb.jpg" alt="Imagem de uma jovem recebendo atendimento odontológico da Turma do Bem" width="400" />
+                <div class="cartao-conteudo">
+                    <h2>Sobre a Turma do Bem</h2>
+                    <p>
+                        A Turma do Bem é uma organização sem fins lucrativos que promove inclusão social por meio do acesso à saúde bucal. Seu programa Dentista do Bem mobiliza dentistas voluntários para oferecer atendimento gratuito a jovens em situação de vulnerabilidade social. Já o Apolônias do Bem oferece tratamento odontológico gratuito a mulheres que sofreram violência e tiveram a dentição afetada, contribuindo para recuperar sua saúde, autoestima e qualidade de vida.
+                    </p>
+                    <a href="sobre.html" class="botao">Saiba mais</a>
+                </div>
+            </article>
+
+        </main>
+
+        <footer class="rodape">
+            <div class="container">
+                <p>&copy; 2026 Turma do Bem.</p>
             </div>
-        </article>
+        </footer>
 
-    </main>
-
-    <footer class="rodape">
-        <div class="container">
-            <p>&copy; 2026 Turma do Bem - Projeto acadêmico.</p>
-        </div>
-    </footer>
-
-</body>
-
+    </body>
 
 </html>

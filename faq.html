@@ -1,65 +1,99 @@
 <!doctype html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ | Turma do Bem</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
-<body>
-    <header class ="cabecalho">
-        <div class="container cabecalho-conteudo">
-            <a
-          class="marca"
-          href="index.html"
-          aria-label="Turma do Bem - página inicial"
-          >
-           <img
-            src="imagens/logo-tdb.jpg"
-            alt=""
-            class="marca-logo"
-            width="4%"
-            > 
-          </a>
-        </div>
-    </header>
-
-    <main id="inicio">
-
-        <section class="hero" aria-labelledby="titulo-principal">
-            <div class="container hero-conteudo">
-            <h1 id="titulo-principal">Tecnologia a favor de mais sorrisos</h1>
-            <p class="hero-texto">
-            Nosso projeto propõe uma plataforma para apoiar a Turma do Bem na organização de informações sobre doadores, parceiros e apoiadores. Queremos facilitar o acompanhamento de doações e o relacionamento com quem contribui para a instituição, fortalecendo sua missão de promover inclusão social por meio da saúde bucal.
-            Conheça nossa proposta, a equipe responsável e as próximas etapas do projeto.
-            </p>
+    <body>
+        <!-- Cabeçalho compartilhado entre as páginas do projeto. -->
+        <header class="cabecalho">
+            <div class="container cabecalho-conteudo">
+                <a class="marca" href="index.html" aria-label="Turma do Bem - página inicial">
+                    <img src="imagens/logo-tdb.jpg" alt="" class="marca-logo" width="60">
+                </a>
+                <nav aria-label="Navegação principal">
+                    <ul class="menu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="impacto.html">Impacto e colaboradores</a></li>
+                        <li><a href="apoio.html">Quero apoiar</a></li>
+                        <li><a href="faq.html" aria-current="page">FAQ</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
             </div>
-        </section>
+        </header>
 
-        <article class="cartao">
-            <img src="imagens/tdb.jpg" 
-            alt="Imagem de uma jovem recebendo atendimento odontológico da Turma do Bem"
-            width = "30%"
-            />
-            <div class="cartao-conteudo">
-                <h2>Sobre a Turma do Bem</h2>
-                <p>
-                    A Turma do Bem é uma organização sem fins lucrativos que promove inclusão social por meio do acesso à saúde bucal. Seu programa Dentista do Bem mobiliza dentistas voluntários para oferecer atendimento gratuito a jovens em situação de vulnerabilidade social. Já o Apolônias do Bem oferece tratamento odontológico gratuito a mulheres que sofreram violência e tiveram a dentição afetada, contribuindo para recuperar sua saúde, autoestima e qualidade de vida.
-                </p>
-                <a href="sobre.html" class="botao">Saiba mais</a>
+        <main id="inicio">
+            <section class="hero" aria-labelledby="titulo-principal">
+                <div class="container hero-conteudo">
+                    <h1 id="titulo-principal">Perguntas frequentes</h1>
+                    <p class="hero-texto">Saiba como oferecer apoio, acompanhar uma oferta e conhecer seus resultados.</p>
+                </div>
+            </section>
+
+            <details class="pergunta-frequente">
+                <summary>Como posso apoiar?</summary>
+                <p>Você pode oferecer materiais, serviços, divulgação ou apoio financeiro. Conheça as <a href="apoio.html#necessidades">necessidades em aberto</a> e escolha como contribuir.</p>
+            </details>
+
+            <details class="pergunta-frequente">
+                <summary>Preciso representar uma empresa?</summary>
+                <p>Não. Pessoas físicas, empresas e outras organizações podem oferecer apoio.</p>
+            </details>
+
+            <details class="pergunta-frequente">
+                <summary>Como envio uma oferta?</summary>
+                <p>Preencha o <a href="apoio.html#formulario-oferta">formulário de apoio</a> com seus dados de contato, o tipo de contribuição e sua disponibilidade. Você também pode oferecer uma contribuição sem escolher uma necessidade específica.</p>
+            </details>
+
+            <details class="pergunta-frequente">
+                <summary>Minha oferta é aceita automaticamente?</summary>
+                <p>Não. A equipe analisa se a oferta atende às necessidades e combina com você os detalhes, a quantidade, a disponibilidade e a entrega.</p>
+            </details>
+
+            <details class="pergunta-frequente">
+                <summary>Como acompanho o andamento?</summary>
+                <p>Utilize o protocolo da oferta na <a href="apoio.html#acompanhamento">área de acompanhamento</a>. As etapas incluem recebimento, análise, negociação, confirmação e conclusão.</p>
+            </details>
+
+            <details class="pergunta-frequente">
+                <summary>Uma oferta financeira já é uma doação?</summary>
+                <p>Não. O formulário registra a intenção de apoiar. A equipe combina os próximos passos; não informe dados bancários no campo de descrição.</p>
+            </details>
+
+            <details class="pergunta-frequente">
+                <summary>Como são apresentados os resultados?</summary>
+                <p>A equipe distingue apoio oferecido, confirmado e recebido. Histórias e resultados dos apoios concluídos são apresentados na <a href="impacto.html">página de impacto</a>.</p>
+            </details>
+
+            <details class="pergunta-frequente">
+                <summary>Meu nome aparecerá entre os colaboradores?</summary>
+                <p>Somente se você autorizar o destaque público. Essa autorização é opcional e não condiciona a análise da oferta.</p>
+            </details>
+
+            <details class="pergunta-frequente">
+                <summary>Onde a IA ajuda?</summary>
+                <p>A IA auxilia a equipe na correspondência entre ofertas e necessidades, na identificação de informações faltantes e na preparação de respostas. As sugestões são revisadas pela equipe, que decide sobre cada apoio.</p>
+            </details>
+
+            <details class="pergunta-frequente">
+                <summary>Como falar com a equipe?</summary>
+                <p>Use o <a href="contato.html">formulário de contato</a> para dúvidas, sugestões e assuntos relacionados à plataforma.</p>
+            </details>
+        </main>
+
+        <footer class="rodape">
+            <div class="container">
+                <p>&copy; 2026 Turma do Bem.</p>
             </div>
-        </article>
+        </footer>
 
-    </main>
-
-    <footer class="rodape">
-        <div class="container">
-            <p>&copy; 2026 Turma do Bem - Projeto acadêmico.</p>
-        </div>
-    </footer>
-
-</body>
-
+    </body>
 
 </html>

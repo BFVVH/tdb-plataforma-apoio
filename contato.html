@@ -1,185 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contato</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contato | Turma do Bem</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
-<body>
+    <body>
 
-    <header class="cabecalho">
-         <div class="container cabecalho-conteudo">
-            <a
-          class="marca"
-          href="index.html"
-          aria-label="Turma do Bem - página inicial"
-          >
-           <img
-            src="imagens/logo-tdb.jpg"
-            alt=""
-            class="marca-logo"
-            width="4%"
-            > 
-          </a>
-    </header>
-
-    <main>
-        <section class="hero" aria-labelledby="titulo-principal">
-            <div class="container hero-conteudo">
-                <h1 id="titulo-principal">Contato</h1>
-                <h2 id="titulo-secundario">Entre em contato com o projeto</h2>
-                <p class="hero-texto">
-                    O projeto Turma do Bem busca promover o acesso
-                    à saúde bucal.
-                </p>
+        <!-- Cabeçalho compartilhado entre as páginas do projeto. -->
+        <header class="cabecalho">
+            <div class="container cabecalho-conteudo">
+                <a class="marca" href="index.html" aria-label="Turma do Bem - página inicial">
+                    <img src="imagens/logo-tdb.jpg" alt="" class="marca-logo" width="60">
+                </a>
+                <nav aria-label="Navegação principal">
+                    <ul class="menu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="impacto.html">Impacto e colaboradores</a></li>
+                        <li><a href="apoio.html">Quero apoiar</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contato.html" aria-current="page">Contato</a></li>
+                    </ul>
+                </nav>
             </div>
-        </section>
-            <section class="informacoes-contato">
-            <h2>Informações de contato</h2>
+        </header>
 
-            <div class="cards-contato">
-
-                <article class="card-contato">
-                    <h3>E-mail</h3>
-
-                    <p>
-                        <a href="mailto:contato@turmadobem.org.br">
-                            contato@turmadobem.org.br
-                        </a>
+        <main>
+            <section class="hero" aria-labelledby="titulo-principal">
+                <div class="container hero-conteudo">
+                    <h1 id="titulo-principal">Contato</h1>
+                    <h2 id="titulo-secundario">Fale com a equipe</h2>
+                    <p class="hero-texto">
+                        Tire suas dúvidas sobre as formas de apoio e o acompanhamento de ofertas.
                     </p>
-
-                    <p>
-                        Envie sua dúvida ou mensagem diretamente para nossa equipe.
-                    </p>
-                </article>
-
-                <article class="card-contato">
-                    <h3>Telefone</h3>
-
-                    <p>
-                        <a href="tel:+5511998579441">
-                            55 (11) 99857-9441
-                        </a>
-                    </p>
-
-                    <p>
-                        Entre em contato para obter mais informações sobre o projeto.
-                    </p>
-                </article>
-
-                
-
-            </div>
+                </div>
             </section>
- 
-        <section class="formulario-contato">
-            <h2>Envie uma mensagem</h2>
+            <section class="informacoes-contato">
+                <h2>Contato com a equipe</h2>
+                <p>Conheça a <a href="integrantes.html">equipe responsável pela plataforma</a> ou deixe sua mensagem no formulário abaixo.</p>
+            </section>
 
-            <p>
-                Preencha o formulário abaixo e entre em contato com a equipe
-                do projeto.
-            </p>
+            <section class="formulario-contato">
+                <h2>Envie uma mensagem</h2>
 
-            <form action="#" method="post">
+                <p>
+                    Preencha o formulário com sua dúvida, sugestão ou interesse em uma parceria.
+                </p>
+                <form>
 
-                <div class="campo">
-                    <label for="nome">Nome completo:</label>
+                    <div class="campo">
+                        <label for="nome">Nome completo:</label>
 
-                    <input
-                        type="text"
-                        id="nome"
-                        name="nome"
-                        placeholder="Digite seu nome"
-                        required
-                    />
-                </div>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
+                    </div>
 
-                <div class="campo">
-                    <label for="email">E-mail:</label>
+                    <div class="campo">
+                        <label for="email">E-mail:</label>
 
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Digite seu e-mail"
-                        required
-                    />
-                </div>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required />
+                    </div>
 
+                    <div class="campo">
+                        <label for="telefone">Telefone:</label>
 
-                <div class="campo">
-                    <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" />
+                    </div>
 
-                    <input
-                        type="tel"
-                        id="telefone"
-                        name="telefone"
-                        placeholder="(00) 00000-0000"
-                    />
-                </div>
+                    <div class="campo">
+                        <label for="assunto">Assunto:</label>
 
-                <div class="campo">
-                    <label for="assunto">Assunto:</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione um assunto</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="parceria">Parceria</option>
+                            <option value="informacao">
+                                Informações sobre o projeto
+                            </option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
 
-                    <select id="assunto" name="assunto" required>
-                        <option value="">Selecione um assunto</option>
-                        <option value="duvida">Dúvida</option>
-                        <option value="sugestao">Sugestão</option>
-                        <option value="parceria">Parceria</option>
-                        <option value="informacao">
-                            Informações sobre o projeto
-                        </option>
-                        <option value="outro">Outro</option>
-                    </select>
-                </div>
+                    <div class="campo">
+                        <label for="mensagem">Mensagem:</label>
 
-                <div class="campo">
-                    <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem..." required></textarea>
+                    </div>
 
-                    <textarea
-                        id="mensagem"
-                        name="mensagem"
-                        rows="6"
-                        placeholder="Digite sua mensagem..."
-                        required
-                    ></textarea>
-                </div>
+                    <div class="botoes-formulario">
 
-                <div class="botoes-formulario">
+                        <button type="button">
+                            Enviar mensagem
+                        </button>
 
-                    <button type="submit">
-                        Enviar mensagem
-                    </button>
+                        <button type="reset">
+                            Limpar formulário
+                        </button>
 
-                    <button type="reset">
-                        Limpar formulário
-                    </button>
+                    </div>
 
-                </div>
+                </form>
+            </section>
 
-            </form>
-        </section>
-    
-        <section class="duvidas-contato">
-            <h2>Antes de entrar em contato</h2>
+            <section class="duvidas-contato">
+                <h2>Antes de entrar em contato</h2>
 
-            <p>
-                Talvez sua dúvida já tenha sido respondida na nossa página
-                de perguntas frequentes.
-            </p>
+                <p>
+                    Talvez sua dúvida já tenha sido respondida na nossa página
+                    de <a href="faq.html">perguntas frequentes</a>.
+                </p>
 
-            
-        </section>
+            </section>
 
-    </main>
+        </main>
 
+        <footer class="rodape">
+            <div class="container">
+                <p>&copy; 2026 Turma do Bem.</p>
+            </div>
+        </footer>
 
-      <footer class="rodape">
-        <div class="container">
-            <p>&copy; 2026 Turma do Bem - Projeto acadêmico.</p>
-        </div>
-    </footer>
-
-</body>
+    </body>
 </html>

@@ -5,23 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contato</title>
 </head>
-<body> 
-<header class ="cabecalho">
-        <div class="container cabecalho-conteudo">
+
+<body>
+
+    <header class="cabecalho">
+         <div class="container cabecalho-conteudo">
             <a
           class="marca"
           href="index.html"
-          aria-label="Turma do Bem"
-          > 
-          Turma do Bem </a>
-        <h1>Integrantes</h1>
-        <nav aria-label="Navegação principal">
-            <ul class="menu">
-                <li> <a aria-label="Início" href="index.html"> Retornar ao Início</a></li>
-            </ul>
-        </nav>
+          aria-label="Turma do Bem - página inicial"
+          >
+           <img
+            src="imagens/logo-tdb.jpg"
+            alt=""
+            class="marca-logo"
+            width="3%"
+            > 
+          </a>
     </header>
 
-</body>
+    <main>
+        <section class="hero" aria-labelledby="titulo-principal">
+            <div class="container hero-conteudo">
+                <h1 id="titulo-principal">Contato</h1>
+                <h2 id="titulo-secundario">Entre em contato com o projeto</h2>
+                <p class="hero-texto">
+                    O projeto Turma do Bem busca promover o acesso
+                    à saúde bucal.
+                </p>
+            </div>
+        </section>
+            <section class="informacoes-contato">
+            <h2>Informações de contato</h2>
 
+            <div class="cards-contato">
+
+                <article class="card-contato">
+                    <h3>E-mail</h3>
+
+                    <p>
+                        <a href="mailto:contato@turmadobem.org.br">
+                            contato@turmadobem.org.br
+                        </a>
+                    </p>
+
+                    <p>
+                        Envie sua dúvida ou mensagem diretamente para nossa equipe.
+                    </p>
+                </article>
+
+                <article class="card-contato">
+                    <h3>Telefone</h3>
+
+                    <p>
+                        <a href="tel:+5511998579441">
+                            55 (11) 99857-9441
+                        </a>
+                    </p>
+
+                    <p>
+                        Entre em contato para obter mais informações sobre o projeto.
+                    </p>
+                </article>
+
+                
+
+            </div>
+            </section>
+ 
+        <section class="formulario-contato">
+            <h2>Envie uma mensagem</h2>
+
+            <p>
+                Preencha o formulário abaixo e entre em contato com a equipe
+                do projeto.
+            </p>
+
+            <form action="#" method="post">
+
+                <div class="campo">
+                    <label for="nome">Nome completo:</label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite seu nome"
+                        required
+                    />
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                    />
+                </div>
+
+
+                <div class="campo">
+                    <label for="telefone">Telefone:</label>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="(00) 00000-0000"
+                    />
+                </div>
+
+                <div class="campo">
+                    <label for="assunto">Assunto:</label>
+
+                    <select id="assunto" name="assunto" required>
+                        <option value="">Selecione um assunto</option>
+                        <option value="duvida">Dúvida</option>
+                        <option value="sugestao">Sugestão</option>
+                        <option value="parceria">Parceria</option>
+                        <option value="informacao">
+                            Informações sobre o projeto
+                        </option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem:</label>
+
+                    <textarea
+                        id="mensagem"
+                        name="mensagem"
+                        rows="6"
+                        placeholder="Digite sua mensagem..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="botoes-formulario">
+
+                    <button type="submit">
+                        Enviar mensagem
+                    </button>
+
+                    <button type="reset">
+                        Limpar formulário
+                    </button>
+
+                </div>
+
+            </form>
+        </section>
+    
+        <section class="duvidas-contato">
+            <h2>Antes de entrar em contato</h2>
+
+            <p>
+                Talvez sua dúvida já tenha sido respondida na nossa página
+                de perguntas frequentes.
+            </p>
+
+            
+        </section>
+
+    </main>
+
+
+      <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2026 Turma do Bem - Projeto acadêmico.</p>
+        </div>
+    </footer>
+
+</body>
 </html>

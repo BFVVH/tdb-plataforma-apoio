@@ -1,0 +1,433 @@
+/* Cores: verde #B5BD00, laranja #F28C00, branco e cinza. */
+/* Base do site */
+/* Inclui padding e borda na largura definida, facilitando o cálculo dos tamanhos. */
+* {
+    box-sizing: border-box;
+}
+
+/* Define a fonte, a cor e o espaçamento entre linhas de todo o site. */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444444;
+    background-color: #FFFFFF;
+}
+
+/* Centraliza o conteúdo. A largura cresce até o limite de 1100px. */
+.container,
+main {
+    width: 92%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 32px 0;
+}
+
+/* Padroniza os títulos; as regras abaixo definem tamanhos por nível. */
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+a {
+    color: #8A4800;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #444444;
+}
+
+/* Mostra um contorno quando links e campos recebem foco pelo teclado. */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #444444;
+    outline-offset: 3px;
+}
+
+/* Evita que imagens ultrapassem a caixa e mantém sua proporção. */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #DDDDDD;
+    margin: 28px 0;
+}
+
+/* Cabeçalho e menu compartilhados entre todas as páginas. */
+.cabecalho {
+    border-top: 12px solid #B5BD00;
+    border-bottom: 1px solid #DDDDDD;
+    padding: 20px 0;
+}
+
+/* Flexbox coloca logo e menu lado a lado e alinha os dois ao centro. */
+.cabecalho-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+/* Impede que o logo encolha para abrir espaço para o menu. */
+.marca {
+    display: block;
+    flex-shrink: 0;
+}
+
+.marca-logo {
+    display: block;
+    width: 90px;
+}
+
+/* Organiza os links em linha. wrap permite uma nova linha se faltar espaço. */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 6px 0;
+    color: #444444;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+}
+
+/* Destaca o link sob o mouse e o link da página atual com uma linha laranja. */
+.menu a:hover,
+.menu a[aria-current="page"] {
+    border-bottom-color: #F28C00;
+}
+
+/* Apresentação de cada página */
+.hero,
+.introducao-integrantes {
+    padding: 28px;
+    background-color: #F5F5F5;
+    border-left: 6px solid #B5BD00;
+    border-radius: 8px;
+}
+
+.hero .container {
+    width: 100%;
+}
+
+.hero-texto {
+    font-size: 18px;
+}
+
+/* Cards, histórias e perguntas frequentes */
+.cartao,
+.integrante,
+.colaborador,
+.necessidade,
+.historia,
+.oferta-demonstrativa,
+.pergunta-frequente {
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    background-color: #F5F5F5;
+}
+
+/* Coloca a imagem ao lado do texto. gap é o espaço entre os dois. */
+.cartao {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.cartao > img {
+    width: 32%;
+}
+
+/* O texto ocupa o espaço restante. min-width permite que ele encolha sem vazar. */
+.cartao-conteudo {
+    flex: 1;
+    min-width: 0;
+}
+
+.cartao-conteudo img {
+    display: block;
+    width: 260px;
+    margin: 16px 0;
+}
+
+/* Organiza os grupos de cards lado a lado com espaço de 20px. */
+.cards-colaboradores,
+.cards-necessidades {
+    display: flex;
+    gap: 20px;
+}
+
+/* Os cards dividem a largura disponível com flex: 1. */
+.colaborador,
+.necessidade {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Cria fotos quadradas; object-fit recorta a imagem sem deformá-la. */
+.integrante img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.links-integrantes a {
+    margin-right: 16px;
+}
+
+/* Botões e avisos */
+/* Compartilha o visual entre links com classe botao e botões de formulário. */
+.botao,
+button {
+    display: inline-block;
+    padding: 12px 18px;
+    border: 1px solid #F28C00;
+    border-radius: 6px;
+    color: #333333;
+    background-color: #F28C00;
+    font: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botao:hover,
+button:hover {
+    color: #333333;
+    background-color: #FFAE38;
+}
+
+/* Deixa cinza os botões que ainda não possuem envio ou consulta real. */
+button:disabled {
+    background-color: #E5E5E5;
+    border-color: #CCCCCC;
+    color: #555555;
+    cursor: not-allowed;
+}
+
+.aviso-prototipo {
+    padding: 20px;
+    margin-bottom: 28px;
+    border-left: 5px solid #F28C00;
+    background-color: #FFF4E5;
+}
+
+.aviso-prototipo p {
+    margin-bottom: 0;
+}
+
+.menu-apoio ul {
+    display: flex;
+    gap: 24px;
+    padding: 0;
+    margin-bottom: 28px;
+    list-style: none;
+}
+
+/* Indicadores e etapas de acompanhamento */
+.indicadores {
+    padding: 24px;
+    background-color: #F5F5F5;
+    border-left: 5px solid #B5BD00;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 0 16px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.etapas-oferta {
+    padding-left: 24px;
+}
+
+/* Formulários */
+form,
+.formulario-consulta {
+    padding: 24px;
+    margin-bottom: 20px;
+    background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+}
+
+fieldset {
+    min-width: 0;
+    padding: 20px;
+    margin: 0 0 24px;
+    border: 1px solid #CCCCCC;
+}
+
+legend {
+    padding: 0 8px;
+    font-weight: bold;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+/* Padroniza os campos. font: inherit usa a fonte definida no restante do site. */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #444444;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* O checkbox usa seu tamanho natural, em vez de ocupar toda a linha. */
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+/* O sinal + seleciona o label logo após o checkbox, deixando o texto ao lado. */
+input[type="checkbox"] + label {
+    display: inline;
+    font-weight: normal;
+}
+
+/* Alinha os botões com espaço entre eles e permite quebrar a linha. */
+.botoes-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Rodapé */
+.rodape {
+    padding: 24px 0;
+    border-top: 6px solid #B5BD00;
+    background-color: #F5F5F5;
+    text-align: center;
+}
+
+.rodape p {
+    margin: 0;
+}
+
+/* Ajustes para as duas faixas desktop da Sprint 1 */
+/* Estas regras passam a valer em janelas com pelo menos 992px de largura. */
+@media (min-width: 992px) {
+    .menu {
+        font-size: 14px;
+    }
+
+    .hero,
+    .introducao-integrantes {
+        padding: 32px;
+    }
+}
+
+/* Em 1300px ou mais, amplia título, menu e espaçamentos para telas grandes. */
+@media (min-width: 1300px) {
+    main {
+        padding: 40px 0;
+    }
+
+    .menu {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .hero,
+    .introducao-integrantes {
+        padding: 40px;
+    }
+}
+
+/* FAQ: details abre e fecha a resposta sem JavaScript. */
+.pergunta-frequente summary {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* A seta nativa indica se a pergunta está aberta ou fechada. */
+.pergunta-frequente summary:hover {
+    color: #8A4800;
+}
+
+.pergunta-frequente summary:focus {
+    outline: 3px solid #444444;
+    outline-offset: 3px;
+}
+
+.pergunta-frequente[open] summary {
+    margin-bottom: 16px;
+}
+
+.pergunta-frequente p {
+    margin-bottom: 0;
+}

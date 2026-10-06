@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Necessidades e ofertas de apoio | Turma do Bem</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- Cabeçalho compartilhado entre as páginas do projeto. -->
+        <header class="cabecalho">
+            <div class="container cabecalho-conteudo">
+                <a class="marca" href="index.html" aria-label="Turma do Bem - página inicial">
+                    <img src="imagens/logo-tdb.jpg" alt="" class="marca-logo" width="60">
+                </a>
+                <nav aria-label="Navegação principal">
+                    <ul class="menu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="impacto.html">Impacto e colaboradores</a></li>
+                        <li><a href="apoio.html" aria-current="page">Quero apoiar</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="inicio">
+            <section class="hero" aria-labelledby="titulo-principal">
+                <div class="container hero-conteudo">
+                    <h1 id="titulo-principal">Encontre uma forma de apoiar</h1>
+                    <p class="hero-texto">Conheça as necessidades, descreva o que você pode oferecer e entenda como a oferta será acompanhada pela equipe.</p>
+                    <a href="impacto.html">Conheça as histórias e os resultados dos apoios</a>
+                </div>
+            </section>
+
+            <nav class="menu-apoio" aria-label="Seções de apoio">
+                <ul>
+                    <li><a href="#necessidades">O que precisamos</a></li>
+                    <li><a href="#formulario-oferta">Oferecer apoio</a></li>
+                    <li><a href="#acompanhamento">Acompanhar uma oferta</a></li>
+                </ul>
+            </nav>
+
+            <section class="necessidades" id="necessidades" aria-labelledby="titulo-necessidades">
+                <h2 id="titulo-necessidades">Necessidades em aberto</h2>
+                <p>Uma oferta será analisada pela ONG antes da confirmação. Você também pode propor uma contribuição que não esteja nesta lista.</p>
+                <div class="cards-necessidades">
+                    <article class="necessidade" id="necessidade-kits">
+                        <h3>Kits para uma nova ação educativa</h3>
+                        <p>Referência: NEC-001 · Materiais · São Paulo, SP</p>
+                        <p>Meta: 100 kits contendo escova, creme dental e fio dental. Produtos novos, lacrados e dentro da validade.</p>
+                        <dl>
+                            <dt>Apoio confirmado</dt><dd>40 kits</dd>
+                            <dt>Materiais já recebidos</dt><dd>0 kits</dd>
+                            <dt>Quantidade ainda sem apoio confirmado</dt><dd>60 kits</dd>
+                            <dt>Entrega desejada</dt><dd><time datetime="2026-11-20">20 de novembro de 2026</time></dd>
+                        </dl>
+                        <p>Esta nova ação está recebendo ofertas de apoio.</p>
+                        <a class="botao" href="#formulario-oferta">Oferecer kits — selecione NEC-001 no formulário</a>
+                    </article>
+                    <article class="necessidade" id="necessidade-transporte">
+                        <h3>Transporte dos materiais</h3>
+                        <p>Referência: NEC-002 · Serviço · São Paulo, SP</p>
+                        <p>Precisamos de uma entrega de materiais para a nova ação educativa. Capacidade, endereços e horário serão combinados pela equipe com o parceiro.</p>
+                        <p>Situação: nenhum apoio confirmado. Data desejada: <time datetime="2026-11-20">20 de novembro de 2026</time>.</p>
+                        <a class="botao" href="#formulario-oferta">Oferecer transporte — selecione NEC-002 no formulário</a>
+                    </article>
+                    <article class="necessidade" id="necessidade-divulgacao">
+                        <h3>Divulgação da campanha de apoio</h3>
+                        <p>Referência: NEC-003 · Divulgação</p>
+                        <p>Apoio para divulgar as necessidades de materiais e transporte. A ONG deverá aprovar o conteúdo e combinar os canais e o período de divulgação.</p>
+                        <p>Situação: em busca de colaboradores.</p>
+                        <a class="botao" href="#formulario-oferta">Oferecer divulgação — selecione NEC-003 no formulário</a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="formulario-oferta" id="formulario-oferta" aria-labelledby="titulo-oferta">
+                <h2 id="titulo-oferta">Conte como você pode ajudar</h2>
+                <p id="aviso-oferta">Preencha os campos marcados com * e conte como você pode contribuir. A equipe analisará sua oferta e combinará os próximos passos. Para apoio financeiro, informe o valor proposto; não é necessário preencher dados bancários.</p>
+                <form aria-describedby="aviso-oferta">
+                    <fieldset>
+                        <legend>Quem oferece o apoio</legend>
+                        <div class="campo">
+                            <label for="perfil">Perfil do apoiador *</label>
+                            <select id="perfil" name="perfil" required>
+                                <option value="">Selecione</option>
+                                <option value="pessoa">Pessoa física</option>
+                                <option value="empresa">Empresa ou organização</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="nome-apoiador">Nome da pessoa, empresa ou organização *</label>
+                            <input id="nome-apoiador" name="nome_apoiador" type="text" placeholder="Digite seu nome ou o nome da organização" required>
+                        </div>
+                        <div class="campo">
+                            <label for="responsavel-oferta">Nome do responsável pelo contato *</label>
+                            <input id="responsavel-oferta" name="responsavel" type="text" placeholder="Responsável pela oferta" required>
+                        </div>
+                        <div class="campo">
+                            <label for="email-oferta">E-mail de contato *</label>
+                            <input id="email-oferta" name="email" type="email" placeholder="exemplo@example.com" required>
+                        </div>
+                        <div class="campo">
+                            <label for="telefone-oferta">Telefone de contato (opcional)</label>
+                            <input id="telefone-oferta" name="telefone" type="tel" placeholder="(00) 00000-0000">
+                        </div>
+                        <div class="campo">
+                            <label for="regiao-oferta">Cidade e estado de atendimento *</label>
+                            <input id="regiao-oferta" name="regiao" type="text" placeholder="São Paulo, SP" required>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Sua oferta</legend>
+                        <div class="campo">
+                            <label for="necessidade-oferta">Qual necessidade você quer apoiar? *</label>
+                            <select id="necessidade-oferta" name="necessidade" required>
+                                <option value="">Selecione</option>
+                                <option value="NEC-001">NEC-001 — Kits de higiene bucal</option>
+                                <option value="NEC-002">NEC-002 — Transporte dos materiais</option>
+                                <option value="NEC-003">NEC-003 — Divulgação da campanha</option>
+                                <option value="outra">Outra contribuição / sem necessidade específica</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="tipo-oferta">Tipo de apoio *</label>
+                            <select id="tipo-oferta" name="tipo" required>
+                                <option value="">Selecione</option>
+                                <option value="materiais">Materiais</option>
+                                <option value="servicos">Serviços</option>
+                                <option value="financeiro">Financeiro</option>
+                                <option value="divulgacao">Divulgação</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="descricao-oferta">Descrição do apoio *</label>
+                            <textarea id="descricao-oferta" name="descricao" rows="5" placeholder="Descreva o apoio, a quantidade ou o valor estimado e as condições. Por exemplo: 40 kits novos, com entrega a combinar." required></textarea>
+                        </div>
+                        <div class="campo">
+                            <label for="disponibilidade-oferta">Disponibilidade e entrega *</label>
+                            <textarea id="disponibilidade-oferta" name="disponibilidade" rows="3" placeholder="Informe o período, a região e se oferece entrega ou precisa de retirada." required></textarea>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Contato e reconhecimento</legend>
+                        <div class="campo">
+                            <input id="contato-autorizado" name="contato_autorizado" type="checkbox" required>
+                            <label for="contato-autorizado">Autorizo o contato da equipe para analisar esta oferta. *</label>
+                        </div>
+                        <div class="campo">
+                            <input id="destaque-autorizado" name="destaque_autorizado" type="checkbox">
+                            <label for="destaque-autorizado">Quero autorizar o destaque público do nome informado após a conclusão do apoio (opcional).</label>
+                        </div>
+                        <p>O reconhecimento público é opcional e não condiciona a análise da oferta.</p>
+                    </fieldset>
+                    <div class="botoes-formulario">
+                        <button type="button">Enviar oferta</button>
+                        <button type="reset">Limpar formulário</button>
+                    </div>
+                </form>
+                <p><a href="#exemplo-acompanhamento">Veja uma oferta em acompanhamento</a>.</p>
+            </section>
+
+            <section class="acompanhamento" id="acompanhamento" aria-labelledby="titulo-acompanhamento">
+                <h2 id="titulo-acompanhamento">Acompanhe sua oferta</h2>
+                <p id="aviso-consulta">Informe o protocolo recebido para acompanhar o andamento da sua oferta.</p>
+                <div class="formulario-consulta" role="group" aria-describedby="aviso-consulta">
+                    <label for="protocolo-consulta">Protocolo da oferta</label>
+                    <input id="protocolo-consulta" name="protocolo" type="text" placeholder="Exemplo: APO-002">
+                    <button type="button">Consultar</button>
+                </div>
+                <p><a href="#exemplo-acompanhamento">Ver oferta em análise</a> · <a href="#exemplo-concluido">Ver apoio concluído</a></p>
+
+                <article class="oferta-demonstrativa" id="exemplo-acompanhamento">
+                    <h3>APO-002 — Oferta em análise</h3>
+                    <dl>
+                        <dt>Apoiador</dt><dd>Rede Sorriso</dd>
+                        <dt>Necessidade</dt><dd>NEC-001 — Kits para a nova ação educativa</dd>
+                        <dt>Oferta</dt><dd>30 kits; entrega a combinar</dd>
+                        <dt>Situação atual</dt><dd>Em análise</dd>
+                        <dt>Próximo passo</dt><dd>A equipe verificará as condições dos materiais e combinará a disponibilidade de entrega.</dd>
+                    </dl>
+                    <p>Esta oferta ainda não foi confirmada e não está incluída nos 40 kits já confirmados para NEC-001.</p>
+                    <ol class="etapas-oferta">
+                        <li>Recebida: descrição da oferta registrada em <time datetime="2026-10-05">5 de outubro de 2026</time>.</li>
+                        <li><strong>Em análise: etapa atual.</strong> Aguardando avaliação da equipe.</li>
+                        <li>Em negociação: ainda não iniciada.</li>
+                        <li>Confirmada: ainda não ocorreu.</li>
+                        <li>Concluída: ainda não ocorreu.</li>
+                    </ol>
+                    <p>A análise poderá resultar em ajuste da oferta ou em sua não aprovação. O envio não garante aceitação.</p>
+                </article>
+
+                <article class="oferta-demonstrativa" id="exemplo-concluido">
+                    <h3>APO-001 — Apoio concluído da história de impacto</h3>
+                    <dl>
+                        <dt>Apoiador</dt><dd>Horizonte Dental</dd>
+                        <dt>Destino</dt><dd>Ação educativa anterior, apresentada na página de impacto</dd>
+                        <dt>Oferta e recebimento</dt><dd>60 kits oferecidos, confirmados e recebidos</dd>
+                        <dt>Situação atual</dt><dd>Concluída</dd>
+                    </dl>
+                    <ol class="etapas-oferta">
+                        <li>Recebida: oferta apresentada em <time datetime="2026-09-21">21 de setembro de 2026</time>.</li>
+                        <li>Em análise: condições dos materiais verificadas em <time datetime="2026-09-22">22 de setembro de 2026</time>.</li>
+                        <li>Em negociação: entrega combinada em <time datetime="2026-09-23">23 de setembro de 2026</time>.</li>
+                        <li>Confirmada: 60 kits acordados em <time datetime="2026-09-24">24 de setembro de 2026</time>.</li>
+                        <li><strong>Concluída:</strong> recebimento dos 60 kits registrado em <time datetime="2026-09-28">28 de setembro de 2026</time>.</li>
+                    </ol>
+                    <p>A ação também recebeu 40 kits da apoiadora Marina Costa, totalizando 100 kits. <a href="impacto.html#titulo-historias">Conheça a história completa</a>.</p>
+                </article>
+            </section>
+
+            <section class="analise-ong" aria-labelledby="titulo-analise">
+                <h2 id="titulo-analise">O que acontece depois que a ONG recebe uma oferta?</h2>
+                <p>A equipe recebe as ofertas, atribui um responsável e analisa as condições do apoio antes de atualizar o andamento.</p>
+                <p>A Inteligência Artificial auxilia a equipe a relacionar ofertas e necessidades e identificar informações faltantes. A decisão de aceitar o apoio é da equipe, que também combina as condições e os próximos passos com o apoiador.</p>
+                <p>Tem dúvidas? Consulte o <a href="faq.html">FAQ</a> ou conheça a <a href="sobre.html">plataforma</a>.</p>
+            </section>
+        </main>
+        <footer class="rodape">
+            <div class="container">
+                <p>&copy; 2026 Turma do Bem.</p>
+            </div>
+        </footer>
+    </body>
+</html>

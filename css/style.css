@@ -1,3 +1,5 @@
+/* Este arquivo CSS foi estruturado com AUXILIO de IA, pra deixar claro.*/
+
 /* Cores: verde #B5BD00, laranja #F28C00, branco e cinza. */
 /* Base do site */
 /* Inclui padding e borda na largura definida, facilitando o cálculo dos tamanhos. */
@@ -157,13 +159,7 @@ hr {
 }
 
 /* Cards, histórias e perguntas frequentes */
-.cartao,
-.integrante,
-.colaborador,
-.necessidade,
-.historia,
-.oferta-demonstrativa,
-.pergunta-frequente {
+.integrante {
     padding: 24px;
     margin-bottom: 24px;
     border: 1px solid #DDDDDD;
@@ -173,6 +169,9 @@ hr {
 
 /* Coloca a imagem ao lado do texto. gap é o espaço entre os dois. */
 .cartao {
+    padding: 24px 0;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #DDDDDD;
     display: flex;
     align-items: center;
     gap: 28px;
@@ -206,19 +205,68 @@ hr {
 .necessidade {
     flex: 1;
     min-width: 0;
+    padding: 20px 0;
+    border-top: 3px solid #B5BD00;
 }
 
-/* Cria fotos quadradas; object-fit recorta a imagem sem deformá-la. */
-.integrante img {
-    width: 120px;
-    height: 120px;
+.necessidade {
+    border-top-color: #F28C00;
+}
+
+/* Perguntas separadas por linhas, sem repetir o fundo dos cards. */
+.pergunta-frequente {
+    padding: 20px 0;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+/* Foto à esquerda e informações à direita, alinhadas ao centro. */
+.integrante {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* Foto maior; object-fit evita deformar a imagem. */
+.integrante > img {
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
+}
+
+.integrante-conteudo {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Ícones locais dos perfis, com área de clique confortável. */
+.links-integrantes {
+    display: flex;
+    gap: 12px;
 }
 
 .links-integrantes a {
-    margin-right: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+}
+
+.links-integrantes a:hover {
+    background-color: #FFF4E5;
+    border-color: #F28C00;
+}
+
+.icone-social {
+    display: block;
+    width: 28px;
+    height: 28px;
 }
 
 /* Botões e avisos */
@@ -271,10 +319,23 @@ button:disabled {
 }
 
 /* Indicadores e etapas de acompanhamento */
+/* Resultados lado a lado; cada número ganha destaque. */
 .indicadores {
-    padding: 24px;
-    background-color: #F5F5F5;
-    border-left: 5px solid #B5BD00;
+    display: flex;
+    gap: 32px;
+    padding: 24px 0;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.indicadores > div {
+    flex: 1;
+}
+
+.indicadores dd {
+    margin: 8px 0 0;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 dt {

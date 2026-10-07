@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Necessidades e ofertas de apoio | Turma do Bem</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body>
+        <header class="cabecalho">
+            <div class="container cabecalho-conteudo">
+                <a class="marca" href="../index.html" aria-label="Turma do Bem - página inicial">
+                    <img src="../imagens/logo-tdb.jpg" alt="" class="marca-logo" width="60">
+                </a>
+                <nav aria-label="Navegação principal">
+                    <ul class="menu">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="integrantes.html">Integrantes</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="impacto.html">Impacto e colaboradores</a></li>
+                        <li><a href="apoio.html" aria-current="page">Quero apoiar</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="inicio">
+            <section class="hero" aria-labelledby="titulo-principal">
+                <h1 id="titulo-principal">Como você pode ajudar?</h1>
+                <p class="hero-texto">Escolha uma necessidade ou ofereça outra forma de apoio. A equipe entra em contato para combinar os detalhes.</p>
+            </section>
+
+            <nav class="menu-apoio" aria-label="Seções de apoio">
+                <ul>
+                    <li><a href="#necessidades">Necessidades</a></li>
+                    <li><a href="#formulario-oferta">Oferecer apoio</a></li>
+                    <li><a href="#acompanhamento">Acompanhar oferta</a></li>
+                </ul>
+            </nav>
+
+            <section class="necessidades" id="necessidades" aria-labelledby="titulo-necessidades">
+                <h2 id="titulo-necessidades">O que precisamos agora</h2>
+                <div class="cards-necessidades">
+                    <article class="necessidade" id="necessidade-kits">
+                        <h3>Kits de higiene bucal</h3>
+                        <p>Escova, creme dental e fio dental, novos e dentro da validade.</p>
+                        <p><strong>Meta: 100 kits.</strong> Temos 40 confirmados e buscamos apoio para os outros 60.</p>
+                        <p>São Paulo · Até <time datetime="2026-11-20">20/11/2026</time>.</p>
+                        <a href="#formulario-oferta">Quero oferecer kits</a>
+                    </article>
+                    <article class="necessidade" id="necessidade-transporte">
+                        <h3>Transporte</h3>
+                        <p>Uma entrega de materiais para a ação educativa em São Paulo.</p>
+                        <p>Data prevista: <time datetime="2026-11-20">20/11/2026</time>. Trajeto e horário a combinar.</p>
+                        <a href="#formulario-oferta">Quero ajudar no transporte</a>
+                    </article>
+                    <article class="necessidade" id="necessidade-divulgacao">
+                        <h3>Divulgação</h3>
+                        <p>Ajude a campanha a chegar a mais pessoas e empresas.</p>
+                        <p>A equipe combina com você os materiais e os canais de divulgação.</p>
+                        <a href="#formulario-oferta">Quero divulgar</a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="formulario-oferta" id="formulario-oferta" aria-labelledby="titulo-oferta">
+                <h2 id="titulo-oferta">Ofereça seu apoio</h2>
+                <p id="aviso-oferta">Conte o que você pode oferecer e deixe um contato. Campos com * são obrigatórios.</p>
+                <form aria-describedby="aviso-oferta">
+                    <fieldset>
+                        <legend>Quem oferece o apoio</legend>
+                        <div class="campo">
+                            <label for="nome-apoiador">Seu nome ou nome da empresa *</label>
+                            <input id="nome-apoiador" name="nome_apoiador" type="text" placeholder="Digite seu nome ou o nome da organização" required>
+                        </div>
+                        <div class="campo">
+                            <label for="email-oferta">E-mail de contato *</label>
+                            <input id="email-oferta" name="email" type="email" placeholder="exemplo@example.com" required>
+                        </div>
+                        <div class="campo">
+                            <label for="telefone-oferta">Telefone de contato (opcional)</label>
+                            <input id="telefone-oferta" name="telefone" type="tel" placeholder="(00) 00000-0000">
+                        </div>
+                        <div class="campo">
+                            <label for="regiao-oferta">Cidade e estado *</label>
+                            <input id="regiao-oferta" name="regiao" type="text" placeholder="São Paulo, SP" required>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Sua oferta</legend>
+                        <div class="campo">
+                            <label for="necessidade-oferta">Qual necessidade quer apoiar? *</label>
+                            <select id="necessidade-oferta" name="necessidade" required>
+                                <option value="">Selecione</option>
+                                <option value="NEC-001">Kits de higiene bucal</option>
+                                <option value="NEC-002">Transporte dos materiais</option>
+                                <option value="NEC-003">Divulgação da campanha</option>
+                                <option value="outra">Outra contribuição / sem necessidade específica</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="tipo-oferta">Tipo de apoio *</label>
+                            <select id="tipo-oferta" name="tipo" required>
+                                <option value="">Selecione</option>
+                                <option value="materiais">Materiais</option>
+                                <option value="servicos">Serviços</option>
+                                <option value="financeiro">Financeiro</option>
+                                <option value="divulgacao">Divulgação</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="descricao-oferta">Como você pode ajudar? *</label>
+                            <textarea id="descricao-oferta" name="descricao" rows="5" placeholder="Informe o que pode oferecer, a quantidade ou o valor e quando estará disponível." required></textarea>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Contato e reconhecimento</legend>
+                        <div class="campo">
+                            <input id="contato-autorizado" name="contato_autorizado" type="checkbox" required>
+                            <label for="contato-autorizado">Autorizo o contato da equipe para analisar esta oferta. *</label>
+                        </div>
+                        <div class="campo">
+                            <input id="destaque-autorizado" name="destaque_autorizado" type="checkbox">
+                            <label for="destaque-autorizado">Autorizo a divulgação do meu nome como apoiador (opcional).</label>
+                        </div>
+                    </fieldset>
+                    <div class="botoes-formulario">
+                        <button type="button">Enviar oferta</button>
+                        <button type="reset">Limpar formulário</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="acompanhamento" id="acompanhamento" aria-labelledby="titulo-acompanhamento">
+                <h2 id="titulo-acompanhamento">Já fez uma oferta?</h2>
+                <p id="aviso-consulta">Informe o protocolo para acompanhar o andamento.</p>
+                <div class="formulario-consulta" role="group" aria-describedby="aviso-consulta">
+                    <label for="protocolo-consulta">Protocolo da oferta</label>
+                    <input id="protocolo-consulta" name="protocolo" type="text" placeholder="Ex.: APO-002">
+                    <button type="button">Consultar</button>
+                </div>
+                <p>Precisa de ajuda? <a href="contato.html">Fale com a equipe</a>.</p>
+            </section>
+        </main>
+
+        <footer class="rodape">
+            <div class="container">
+                <p>&copy; 2026 Turma do Bem.</p>
+            </div>
+        </footer>
+
+    </body>
+
+</html>

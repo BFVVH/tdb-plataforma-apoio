@@ -36,16 +36,45 @@ Os botões de envio e consulta são demonstrativos: não enviam nem armazenam da
 
 ## Como abrir
 
-1. Baixe o projeto ou clone o repositório.
-2. Mantenha a estrutura de pastas.
-3. Abra o arquivo `index.html` no navegador.
-4. Use o menu para acessar as demais páginas.
+Para clonar, tenha o Git instalado no computador. Os comandos abaixo são para o terminal PowerShell do Windows.
 
-Não é necessário instalar dependências. O layout foi planejado para desktop, com ajustes em **992 px** e **1300 px**. A adaptação para celulares fica para as próximas etapas.
+1. Abra o terminal na pasta onde deseja salvar o projeto. Confira se o Git está disponível:
+
+   ```powershell
+   git --version
+   ```
+
+   O terminal deve mostrar a versão instalada. Se o comando não for reconhecido, instale o Git e abra o terminal novamente.
+
+2. Clone o repositório:
+
+   ```powershell
+   git clone https://github.com/BFVVH/tdb-plataforma-apoio.git
+   ```
+
+   Esse comando baixa os arquivos e o histórico do projeto para uma nova pasta chamada `tdb-plataforma-apoio`.
+
+3. Entre na pasta criada:
+
+   ```powershell
+   cd tdb-plataforma-apoio
+   ```
+
+4. Abra a página inicial no navegador padrão:
+
+   ```powershell
+   Start-Process .\index.html
+   ```
+
+   Você também pode abrir a pasta pelo Explorador de Arquivos e dar dois cliques em `index.html`. Depois, use o menu do site para acessar as demais páginas.
+
+Se preferir baixar sem Git, acesse o repositório no GitHub, clique em **Code > Download ZIP**, extraia o arquivo e abra `index.html`. Mantenha a estrutura de pastas para que as imagens e o CSS carreguem corretamente.
+
+Não é necessário instalar dependências nem iniciar um servidor. O layout foi planejado para desktop, com ajustes em **992 px** e **1300 px**. A adaptação para celulares fica para as próximas etapas.
 
 ## Repositório e visualização
 
-- [Repositório no GitHub](https://github.com/BFVVH/turma-do-bem)
+- [Repositório no GitHub](https://github.com/BFVVH/tdb-plataforma-apoio)
 
 ## Tecnologias
 
@@ -56,7 +85,7 @@ Não é necessário instalar dependências. O layout foi planejado para desktop,
 ## Organização das pastas
 
 ```text
-turma-do-bem/
+tdb-plataforma-apoio/
 ├── index.html
 ├── README.md
 ├── paginas/
@@ -100,8 +129,6 @@ O estilo está concentrado em `css/style.css`, compartilhado pelas sete páginas
 
 
 ## Equipe e contato
-
-Todos os integrantes pertencem à turma **1TDSPA**. Para contato com os autores, utilize os perfis do LinkedIn abaixo. O formulário do site é apenas uma demonstração nesta sprint.
 
 | Foto | Integrante | RM | GitHub | LinkedIn |
 | --- | --- | --- | --- | --- |

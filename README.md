@@ -25,7 +25,7 @@ Esta sprint contém um **protótipo estático para desktop**, feito com HTML e C
 | `index.html` | Apresentar a ONG e direcionar o visitante para as formas de apoio. |
 | `paginas/integrantes.html` | Mostrar fotos, nomes, RMs, turma e perfis dos integrantes. |
 | `paginas/sobre.html` | Explicar o contexto, a proposta, as tecnologias e as próximas etapas. |
-| `paginas/faq.html` | Responder dúvidas com perguntas que abrem e fecham usando `details` e `summary`. |
+| `paginas/faq.html` | Responder dúvidas frequentes. |
 | `paginas/contato.html` | Apresentar o formulário de contato. |
 | `paginas/impacto.html` | Mostrar uma história de apoio, resultados e colaboradores em destaque. |
 | `paginas/apoio.html` | Exibir necessidades, formulário de oferta e campo de consulta de protocolo. |
@@ -51,7 +51,6 @@ Não é necessário instalar dependências. O layout foi planejado para desktop,
 
 - HTML5 para a estrutura e o conteúdo.
 - CSS3 em arquivo externo para o visual.
-- Flexbox para organizar elementos lado a lado.
 - Git e GitHub para versionamento e colaboração.
 
 ## Organização das pastas

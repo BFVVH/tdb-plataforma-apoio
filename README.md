@@ -1,10 +1,10 @@
-# Turma do Bem - Plataforma de apoio
+# Rede do Bem - Plataforma de apoio à Turma do Bem
 
 https://bfvvh.github.io/tdb-plataforma-apoio/
 
 Projeto acadêmico da turma **1TDSPA**, desenvolvido para a Sprint 1 de Front-End Design Engineering da FIAP.
 
-O site apresenta a Turma do Bem e uma proposta para aproximar a ONG de pessoas e empresas que querem ajudar. O visitante pode conhecer resultados, consultar necessidades e preencher uma oferta de apoio.
+A Rede do Bem é uma plataforma para aproximar a Turma do Bem de pessoas e empresas que querem ajudar. O site apresenta a ONG e as formas de apoio. O visitante pode conhecer resultados, consultar necessidades e preencher uma oferta de apoio.
 
 ![Logo da Turma do Bem](assets/imagens/logo-tdb.png)
 
@@ -24,7 +24,7 @@ Esta sprint contém um **protótipo estático para desktop**, feito com HTML e C
 
 | Página | Objetivo |
 | --- | --- |
-| `index.html` | Apresentar a ONG e direcionar o visitante para as formas de apoio. |
+| `index.html` | Apresentar a Rede do Bem e a ONG e direcionar o visitante para as formas de apoio. |
 | `paginas/integrantes.html` | Mostrar fotos, nomes, RMs, turma e perfis dos integrantes. |
 | `paginas/sobre.html` | Explicar o contexto, a proposta, as tecnologias e as próximas etapas. |
 | `paginas/faq.html` | Responder dúvidas frequentes. |
@@ -32,7 +32,7 @@ Esta sprint contém um **protótipo estático para desktop**, feito com HTML e C
 | `paginas/impacto.html` | Mostrar uma história de apoio, resultados e colaboradores em destaque. |
 | `paginas/apoio.html` | Exibir necessidades, formulário de oferta e campo de consulta de protocolo. |
 
-Todas as páginas possuem menu principal, logo com link para o início e rodapé padronizado. As duas páginas dedicadas à solução são **Impacto e colaboradores** e **Quero apoiar**.
+Todas as páginas possuem menu principal, a logo da Turma do Bem ao lado do nome Rede do Bem com link para o início e rodapé padronizado. As duas páginas dedicadas à solução são **Impacto e colaboradores** e **Quero apoiar**.
 
 Os botões de envio e consulta são demonstrativos: não enviam nem armazenam dados e não retornam o andamento das ofertas.
 
@@ -118,14 +118,9 @@ tdb-plataforma-apoio/
 
 ## Visual e CSS
 
-O estilo está concentrado em `css/style.css`, compartilhado pelas sete páginas e documentado com comentários simples.
+O site usa um CSS externo em `css/style.css`, compartilhado por todas as páginas.
 
-- Verde `#B5BD00` e laranja `#F28C00` como cores principais, acompanhados de branco e cinza.
-- Fonte Arial, com alternativa sem serifa.
-- Conteúdo centralizado e limitado a 1100 px de largura.
-- Flexbox no cabeçalho, nos cartões dos integrantes e nos grupos de necessidades, colaboradores e indicadores.
-- Linha laranja no menu ao passar o mouse e na página atual.
-- Campos com labels, imagens com textos alternativos e contorno de foco para navegação pelo teclado.
+O visual utiliza Verde `#B5BD00` e laranja `#F28C00` como cores principais, baseado na identidade oficial da Turma do Bem, fonte Arial e conteúdo centralizado. O site também inclui um cabeçalho com marca (logo e o Título do projeto) + flexbox para o menu de páginas.
 
 <hr>
 <img src="assets/imagens/tdb.jpg" alt="Imagem usada na apresentação da ONG" width="500">

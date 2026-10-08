@@ -1,6 +1,6 @@
-/* Este arquivo CSS foi estruturado com AUXILIO de IA, pra deixar claro.*/
+/* Este arquivo CSS foi estruturado com AUXILIO de IA, mas nós analisamos, aprendemos elementos e estrutura e alteramos conforme a nossa visão.*/
 
-/* Cores: verde #B5BD00, laranja #F28C00, branco e cinza. */
+/* Cores: verde #B5BD00, laranja #F28C00, branco e cinza. Foi baseado nas cores oficiais da Turma do Bem.*/
 /* Base do site */
 /* Inclui padding e borda na largura definida, facilitando o cálculo dos tamanhos. */
 * {
@@ -97,23 +97,60 @@ hr {
     padding: 20px 0;
 }
 
-/* Flexbox coloca logo e menu lado a lado e alinha os dois ao centro. */
+/* Flexbox alinha marca e menu e permite outra linha quando falta espaço. */
 .cabecalho-conteudo {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 24px;
 }
 
 /* Impede que o logo encolha para abrir espaço para o menu. */
 .marca {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 14px;
     flex-shrink: 0;
+    color: #444444;
+    text-decoration: none;
 }
 
+/* Nome da plataforma ao lado da logo da ONG. */
+.marca-texto {
+    display: block;
+}
+
+.marca-nome {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.marca-destaque {
+    color: #F28C00;
+}
+
+.marca-subtitulo {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* O menu vai para a linha seguinte se não couber junto da marca. */
+.cabecalho nav {
+    flex: 1 1 700px;
+    min-width: 0;
+}
+
+/* Pequeno ajuste visual para centralizar a logo com o nome e o subtítulo. */
 .marca-logo {
     display: block;
     width: 90px;
+    flex-shrink: 0;
+    position: relative;
+    top: -4px;
 }
 
 /* Organiza os links em linha. wrap permite uma nova linha se faltar espaço. */
@@ -435,7 +472,7 @@ input[type="checkbox"] + label {
     margin: 0;
 }
 
-/* Ajustes para as duas faixas desktop da Sprint 1 */
+/* Ajustes para as duas faixas desktop */
 /* Estas regras passam a valer em janelas com pelo menos 992px de largura. */
 @media (min-width: 992px) {
     .menu {
@@ -468,7 +505,7 @@ input[type="checkbox"] + label {
     }
 }
 
-/* FAQ: details abre e fecha a resposta sem JavaScript. */
+/* FAQ: details abre e fecha a resposta */
 .pergunta-frequente summary {
     font-size: 20px;
     font-weight: bold;

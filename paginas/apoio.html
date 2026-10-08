@@ -92,26 +92,46 @@
                     </fieldset>
                     <fieldset>
                         <legend>Sua oferta</legend>
-                        <div class="campo">
-                            <label for="necessidade-oferta">Qual necessidade quer apoiar? *</label>
-                            <select id="necessidade-oferta" name="necessidade" required>
-                                <option value="">Selecione</option>
-                                <option value="NEC-001">Kits de higiene bucal</option>
-                                <option value="NEC-002">Transporte dos materiais</option>
-                                <option value="NEC-003">Divulgação da campanha</option>
-                                <option value="outra">Outra contribuição / sem necessidade específica</option>
-                            </select>
-                        </div>
-                        <div class="campo">
-                            <label for="tipo-oferta">Tipo de apoio *</label>
-                            <select id="tipo-oferta" name="tipo" required>
-                                <option value="">Selecione</option>
-                                <option value="materiais">Materiais</option>
-                                <option value="servicos">Serviços</option>
-                                <option value="financeiro">Financeiro</option>
-                                <option value="divulgacao">Divulgação</option>
-                            </select>
-                        </div>
+                        <fieldset>
+                            <legend>Quais necessidades quer apoiar?</legend>
+                            <p>Marque uma ou mais opções.</p>
+                            <div class="campo">
+                                <input id="apoio-kits" name="necessidade" type="checkbox" value="NEC-001">
+                                <label for="apoio-kits">Kits de higiene bucal</label>
+                            </div>
+                            <div class="campo">
+                                <input id="apoio-transporte" name="necessidade" type="checkbox" value="NEC-002">
+                                <label for="apoio-transporte">Transporte dos materiais</label>
+                            </div>
+                            <div class="campo">
+                                <input id="apoio-divulgacao" name="necessidade" type="checkbox" value="NEC-003">
+                                <label for="apoio-divulgacao">Divulgação da campanha</label>
+                            </div>
+                            <div class="campo">
+                                <input id="apoio-outra" name="necessidade" type="checkbox" value="outra">
+                                <label for="apoio-outra">Outra contribuição / sem necessidade específica</label>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Que tipos de apoio você oferece?</legend>
+                            <p>Marque uma ou mais opções.</p>
+                            <div class="campo">
+                                <input id="tipo-materiais" name="tipo" type="checkbox" value="materiais">
+                                <label for="tipo-materiais">Materiais</label>
+                            </div>
+                            <div class="campo">
+                                <input id="tipo-servicos" name="tipo" type="checkbox" value="servicos">
+                                <label for="tipo-servicos">Serviços</label>
+                            </div>
+                            <div class="campo">
+                                <input id="tipo-financeiro" name="tipo" type="checkbox" value="financeiro">
+                                <label for="tipo-financeiro">Financeiro</label>
+                            </div>
+                            <div class="campo">
+                                <input id="tipo-divulgacao" name="tipo" type="checkbox" value="divulgacao">
+                                <label for="tipo-divulgacao">Divulgação</label>
+                            </div>
+                        </fieldset>
                         <div class="campo">
                             <label for="descricao-oferta">Como você pode ajudar? *</label>
                             <textarea id="descricao-oferta" name="descricao" rows="5" placeholder="Informe o que pode oferecer, a quantidade ou o valor e quando estará disponível." required></textarea>

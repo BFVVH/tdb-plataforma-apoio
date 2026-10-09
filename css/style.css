@@ -64,16 +64,6 @@ a:hover {
     color: #444444;
 }
 
-/* Mostra um contorno quando links e campos recebem foco pelo teclado. */
-a:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-    outline: 3px solid #444444;
-    outline-offset: 3px;
-}
-
 /* Evita que imagens ultrapassem a caixa e mantém sua proporção. */
 img {
     max-width: 100%;
@@ -515,11 +505,6 @@ input[type="checkbox"] + label {
 /* A seta nativa indica se a pergunta está aberta ou fechada. */
 .pergunta-frequente summary:hover {
     color: #8A4800;
-}
-
-.pergunta-frequente summary:focus {
-    outline: 3px solid #444444;
-    outline-offset: 3px;
 }
 
 .pergunta-frequente[open] summary {

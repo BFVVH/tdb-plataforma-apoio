@@ -728,3 +728,83 @@ input[type="checkbox"] + label {
         font-size: 18px;
     }
 }
+
+/* Menu compartilhado: o desktop mantém os links visíveis. */
+.menu-toggle {
+    display: none;
+}
+
+/* Evita hover persistente após o toque; com mouse, usa um laranja mais claro. */
+.menu-toggle:hover {
+    background-color: #F28C00;
+    border-color: #F28C00;
+    color: #333333;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .menu-toggle:hover {
+        background-color: #FFAE38;
+    }
+}
+
+.menu-toggle:focus-visible,
+#menu-principal a:focus-visible {
+    outline: 3px solid #8A4800;
+    outline-offset: 4px;
+}
+
+@media (max-width: 991px) {
+    .menu-interativo .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 44px;
+    }
+
+    .menu-interativo #menu-principal {
+        display: none;
+    }
+
+    .menu-interativo #menu-principal.aberto {
+        display: block;
+    }
+
+    .menu-interativo #menu-principal .menu {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .menu-interativo #menu-principal a {
+        display: block;
+        padding: 10px 12px;
+    }
+}
+
+/* Tablet: marca e botão nas extremidades do cabeçalho. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .cabecalho-conteudo.menu-interativo {
+        justify-content: space-between;
+    }
+}
+
+/* Celular: marca centralizada e botão alinhado à esquerda na linha seguinte. */
+@media (max-width: 767px) {
+    .cabecalho-conteudo.menu-interativo {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .menu-interativo .marca {
+        align-self: center;
+    }
+
+    .menu-interativo .menu-toggle {
+        align-self: flex-start;
+    }
+
+    .menu-interativo #menu-principal {
+        flex: 0 1 auto;
+        width: 100%;
+    }
+}

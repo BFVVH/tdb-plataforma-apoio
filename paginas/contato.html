@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Contato | Rede do Bem</title>
         <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/script.js" defer></script>
     </head>
 
     <body>
@@ -18,7 +19,11 @@
                         <span class="marca-subtitulo">Plataforma de apoio à Turma do Bem</span>
                     </span>
                 </a>
-                <nav aria-label="Navegação principal">
+                <button class="menu-toggle" type="button"
+                    aria-controls="menu-principal" aria-expanded="false">
+                    <span aria-hidden="true">☰</span> Menu
+                </button>
+                <nav id="menu-principal" aria-label="Navegação principal">
                     <ul class="menu">
                         <li><a href="../index.html">Início</a></li>
                         <li><a href="integrantes.html">Integrantes</a></li>

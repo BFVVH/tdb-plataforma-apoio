@@ -1039,11 +1039,6 @@ input[type="checkbox"] + label {
     transform: translateX(14px);
 }
 
-:root[data-tema="escuro"] .marca-logo {
-    background-color: #FFFFFF;
-    border-radius: 8px;
-    padding: 4px;
-}
 
 /* Clareia apenas o GitHub; o LinkedIn mantém o azul e as letras brancas originais. */
 :root[data-tema="escuro"] .icone-social[src$="github.svg"] {

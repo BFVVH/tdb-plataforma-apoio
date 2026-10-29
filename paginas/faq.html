@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FAQ | Rede do Bem</title>
+        <script src="../js/tema.js"></script>
         <link rel="stylesheet" href="../css/style.css">
         <script src="../js/script.js" defer></script>
     </head>
@@ -20,10 +21,17 @@
                         <span class="marca-subtitulo">Plataforma de apoio à Turma do Bem</span>
                     </span>
                 </a>
-                <button class="menu-toggle" type="button"
-                    aria-controls="menu-principal" aria-expanded="false">
-                    <span aria-hidden="true">☰</span> Menu
-                </button>
+                <div class="acoes-cabecalho">
+                    <button class="menu-toggle" type="button"
+                        aria-controls="menu-principal" aria-expanded="false">
+                        <span aria-hidden="true">☰</span> Menu
+                    </button>
+                    <button class="tema-toggle" type="button" role="switch"
+                        aria-checked="false" aria-label="Modo escuro" hidden>
+                        <span class="tema-trilho" aria-hidden="true"></span>
+                        <span>Modo escuro</span>
+                    </button>
+                </div>
                 <nav id="menu-principal" aria-label="Navegação principal">
                     <ul class="menu">
                         <li><a href="../index.html">Início</a></li>

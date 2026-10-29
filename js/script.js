@@ -16,8 +16,8 @@ if (botaoMenu && menuPrincipal) {
         botaoMenu.setAttribute("aria-expanded", String(aberto));
     }
 
-    // adiciona a class menu-interativo ao elemento pai do botao, q é a div
-    botaoMenu.parentElement.classList.add("menu-interativo");
+    // Ativa o menu interativo na div do cabeçalho que contém marca, botões e navegação.
+    botaoMenu.closest(".cabecalho-conteudo").classList.add("menu-interativo");
 
     // o botão escuta por um evento de click do mouse e executa a função pra alternar
     // o estado pro inverso de aberto, que pode ser true ou false naquele momento

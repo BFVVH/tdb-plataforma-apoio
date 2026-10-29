@@ -514,3 +514,217 @@ input[type="checkbox"] + label {
 .pergunta-frequente p {
     margin-bottom: 0;
 }
+
+/* Tablet: mantém a identidade visual e redistribui os cartões em duas colunas. */
+@media (max-width: 991px) {
+    .cabecalho-conteudo {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .cabecalho nav {
+        flex-basis: 100%;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 8px 16px;
+    }
+
+    .menu li {
+        margin-bottom: 0;
+    }
+
+    .menu a {
+        padding: 10px 0;
+    }
+
+    .cards-colaboradores,
+    .cards-necessidades {
+        flex-wrap: wrap;
+    }
+
+    .colaborador,
+    .necessidade {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .indicadores {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .indicadores > div {
+        flex: 1 1 160px;
+        min-width: 0;
+    }
+
+    .menu-apoio ul {
+        flex-wrap: wrap;
+        gap: 12px 24px;
+    }
+}
+
+/* Celular: conteúdo em uma coluna, com fotos proporcionais e leitura confortável. */
+@media (max-width: 767px) {
+    main {
+        padding: 24px 0;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .hero,
+    .introducao-integrantes {
+        padding: 20px;
+    }
+
+    .hero-texto {
+        font-size: 16px;
+    }
+
+    .cartao,
+    .integrante {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .cartao > img {
+        width: 100%;
+        max-width: 420px;
+        align-self: center;
+    }
+
+    .integrante > img {
+        width: 220px;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        align-self: center;
+    }
+
+    .colaborador,
+    .necessidade {
+        flex-basis: 100%;
+    }
+
+    .marca {
+        max-width: 100%;
+        flex-shrink: 1;
+    }
+
+    .marca-texto {
+        min-width: 0;
+    }
+
+    main,
+    .rodape {
+        overflow-wrap: anywhere;
+    }
+
+    form,
+    .formulario-consulta {
+        padding: 20px;
+    }
+
+    fieldset {
+        padding: 16px;
+    }
+
+    legend {
+        max-width: 100%;
+    }
+}
+
+/* Telas menores: reduz recuos para preservar espaço nos formulários aninhados. */
+@media (max-width: 480px) {
+    .cabecalho {
+        padding: 16px 0;
+    }
+
+    .marca {
+        gap: 10px;
+    }
+
+    .marca-logo {
+        width: 64px;
+    }
+
+    .marca-nome {
+        font-size: 22px;
+    }
+
+    .menu {
+        gap: 4px 12px;
+        font-size: 14px;
+    }
+
+    .menu a {
+        padding: 10px 0;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .hero,
+    .introducao-integrantes,
+    .integrante,
+    .aviso-prototipo {
+        padding: 16px;
+    }
+
+    form,
+    .formulario-consulta {
+        padding: 12px;
+    }
+
+    fieldset {
+        padding: 10px;
+        margin-bottom: 16px;
+    }
+
+    fieldset fieldset {
+        padding: 8px;
+    }
+
+    legend {
+        padding: 0 4px;
+    }
+
+    .indicadores {
+        flex-direction: column;
+    }
+
+    .indicadores > div {
+        flex: 0 1 auto;
+    }
+
+    .indicadores dd {
+        font-size: 28px;
+    }
+
+    .menu-apoio ul {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .botoes-formulario {
+        flex-direction: column;
+    }
+
+    .botoes-formulario button,
+    .formulario-consulta button {
+        width: 100%;
+    }
+
+    .pergunta-frequente summary {
+        font-size: 18px;
+    }
+}

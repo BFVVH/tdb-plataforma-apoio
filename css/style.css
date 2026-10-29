@@ -810,8 +810,9 @@ input[type="checkbox"] + label {
 }
 
 
-/* Validação do formulário de contato. */
-#formulario-contato .campo-invalido {
+/* Validação dos formulários de contato e oferta. */
+#formulario-contato .campo-invalido,
+#form-oferta .campo-invalido {
     border: 2px solid #B42318;
 }
 
@@ -822,6 +823,7 @@ input[type="checkbox"] + label {
 }
 
 .erro-campo:empty,
-#retorno-contato:empty {
+#retorno-contato:empty,
+#retorno-oferta:empty {
     display: none;
 }

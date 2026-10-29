@@ -26,6 +26,14 @@ if (botaoMenu && menuPrincipal) {
 }
 
 
+// Mostra ou limpa os erros dos dois formulários.
+function mostrarErro(campo, texto) {
+    const aviso = document.querySelector("#erro-" + campo.id);
+    aviso.textContent = texto;
+    campo.classList.toggle("campo-invalido", texto !== "");
+    campo.setAttribute("aria-invalid", String(texto !== ""));
+}
+
 // Validação do formulário da página Contato.
 const formularioContato = document.querySelector("#formulario-contato");
 
@@ -36,13 +44,6 @@ if (formularioContato) {
     const mensagem = formularioContato.querySelector("#mensagem");
     const retornoContato = formularioContato.querySelector("#retorno-contato");
 
-    // A mesma função mostra ou limpa o erro de cada campo.
-    function mostrarErro(campo, texto) {
-        const aviso = document.querySelector("#erro-" + campo.id);
-        aviso.textContent = texto;
-        campo.classList.toggle("campo-invalido", texto !== "");
-        campo.setAttribute("aria-invalid", String(texto !== ""));
-    }
 
     // escuta pelo evento submit do botao de enviar formulario
     formularioContato.addEventListener("submit", function (evento) {
@@ -79,5 +80,64 @@ if (formularioContato) {
         mostrarErro(assunto, "");
         mostrarErro(mensagem, "");
         retornoContato.textContent = "";
+    });
+}
+
+
+// Validação do formulário da página Quero apoiar.
+const formularioOferta = document.querySelector("#form-oferta");
+
+if (formularioOferta) {
+    const nomeApoiador = formularioOferta.querySelector("#nome-apoiador");
+    const emailOferta = formularioOferta.querySelector("#email-oferta");
+    const regiaoOferta = formularioOferta.querySelector("#regiao-oferta");
+    const descricaoOferta = formularioOferta.querySelector("#descricao-oferta");
+    const necessidadesOferta = formularioOferta.querySelector("#necessidades-oferta");
+    const tiposOferta = formularioOferta.querySelector("#tipos-oferta");
+    const contatoAutorizado = formularioOferta.querySelector("#contato-autorizado");
+    const retornoOferta = formularioOferta.querySelector("#retorno-oferta");
+
+    formularioOferta.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+        retornoOferta.textContent = "";
+
+        mostrarErro(nomeApoiador, nomeApoiador.value.trim() === "" ? "Informe seu nome ou o nome da empresa." : "");
+        mostrarErro(emailOferta,
+            emailOferta.value.trim() === "" || emailOferta.validity.typeMismatch
+                ? "Informe um e-mail válido, como nome@exemplo.com."
+                : ""
+        );
+        mostrarErro(regiaoOferta, regiaoOferta.value.trim() === "" ? "Informe sua cidade e estado." : "");
+        mostrarErro(descricaoOferta, descricaoOferta.value.trim() === "" ? "Descreva como você pode ajudar." : "");
+        mostrarErro(necessidadesOferta,
+            necessidadesOferta.querySelector("input:checked") ? "" : "Selecione pelo menos uma necessidade."
+        );
+        mostrarErro(tiposOferta,
+            tiposOferta.querySelector("input:checked") ? "" : "Selecione pelo menos um tipo de apoio."
+        );
+        mostrarErro(contatoAutorizado,
+            contatoAutorizado.checked ? "" : "Autorize o contato para continuar."
+        );
+
+        const primeiroErro = formularioOferta.querySelector(".campo-invalido");
+        if (primeiroErro) {
+            // Em grupos de opções, o foco vai para o primeiro checkbox.
+            const campo = primeiroErro.querySelector("input") || primeiroErro;
+            campo.focus();
+            return;
+        }
+
+        retornoOferta.textContent = "A oferta foi enviada";
+    });
+
+    formularioOferta.addEventListener("reset", function () {
+        mostrarErro(nomeApoiador, "");
+        mostrarErro(emailOferta, "");
+        mostrarErro(regiaoOferta, "");
+        mostrarErro(descricaoOferta, "");
+        mostrarErro(necessidadesOferta, "");
+        mostrarErro(tiposOferta, "");
+        mostrarErro(contatoAutorizado, "");
+        retornoOferta.textContent = "";
     });
 }

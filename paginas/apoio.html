@@ -79,16 +79,18 @@
             <section class="formulario-oferta" id="formulario-oferta" aria-labelledby="titulo-oferta">
                 <h2 id="titulo-oferta">Ofereça seu apoio</h2>
                 <p id="aviso-oferta">Conte o que você pode oferecer e deixe um contato. Campos com * são obrigatórios.</p>
-                <form aria-describedby="aviso-oferta">
+                <form id="form-oferta" aria-describedby="aviso-oferta" novalidate>
                     <fieldset>
                         <legend>Quem oferece o apoio</legend>
                         <div class="campo">
                             <label for="nome-apoiador">Seu nome ou nome da empresa *</label>
-                            <input id="nome-apoiador" name="nome_apoiador" type="text" placeholder="Digite seu nome ou o nome da organização" required>
+                            <input id="nome-apoiador" aria-describedby="erro-nome-apoiador" name="nome_apoiador" type="text" placeholder="Digite seu nome ou o nome da organização">
+                            <p class="erro-campo" id="erro-nome-apoiador"></p>
                         </div>
                         <div class="campo">
                             <label for="email-oferta">E-mail de contato *</label>
-                            <input id="email-oferta" name="email" type="email" placeholder="exemplo@example.com" required>
+                            <input id="email-oferta" aria-describedby="erro-email-oferta" name="email" type="email" placeholder="exemplo@example.com">
+                            <p class="erro-campo" id="erro-email-oferta"></p>
                         </div>
                         <div class="campo">
                             <label for="telefone-oferta">Telefone de contato (opcional)</label>
@@ -96,13 +98,14 @@
                         </div>
                         <div class="campo">
                             <label for="regiao-oferta">Cidade e estado *</label>
-                            <input id="regiao-oferta" name="regiao" type="text" placeholder="São Paulo, SP" required>
+                            <input id="regiao-oferta" aria-describedby="erro-regiao-oferta" name="regiao" type="text" placeholder="São Paulo, SP">
+                            <p class="erro-campo" id="erro-regiao-oferta"></p>
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Sua oferta</legend>
-                        <fieldset>
-                            <legend>Quais necessidades quer apoiar?</legend>
+                        <fieldset id="necessidades-oferta" aria-describedby="erro-necessidades-oferta">
+                            <legend>Quais necessidades quer apoiar? *</legend>
                             <p>Marque uma ou mais opções.</p>
                             <div class="campo">
                                 <input id="apoio-kits" name="necessidade" type="checkbox" value="NEC-001">
@@ -120,9 +123,10 @@
                                 <input id="apoio-outra" name="necessidade" type="checkbox" value="outra">
                                 <label for="apoio-outra">Outra contribuição / sem necessidade específica</label>
                             </div>
+                            <p class="erro-campo" id="erro-necessidades-oferta"></p>
                         </fieldset>
-                        <fieldset>
-                            <legend>Que tipos de apoio você oferece?</legend>
+                        <fieldset id="tipos-oferta" aria-describedby="erro-tipos-oferta">
+                            <legend>Que tipos de apoio você oferece? *</legend>
                             <p>Marque uma ou mais opções.</p>
                             <div class="campo">
                                 <input id="tipo-materiais" name="tipo" type="checkbox" value="materiais">
@@ -140,17 +144,20 @@
                                 <input id="tipo-divulgacao" name="tipo" type="checkbox" value="divulgacao">
                                 <label for="tipo-divulgacao">Divulgação</label>
                             </div>
+                            <p class="erro-campo" id="erro-tipos-oferta"></p>
                         </fieldset>
                         <div class="campo">
                             <label for="descricao-oferta">Como você pode ajudar? *</label>
-                            <textarea id="descricao-oferta" name="descricao" rows="5" placeholder="Informe o que pode oferecer, a quantidade ou o valor e quando estará disponível." required></textarea>
+                            <textarea id="descricao-oferta" aria-describedby="erro-descricao-oferta" name="descricao" rows="5" placeholder="Informe o que pode oferecer, a quantidade ou o valor e quando estará disponível."></textarea>
+                            <p class="erro-campo" id="erro-descricao-oferta"></p>
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Contato e reconhecimento</legend>
                         <div class="campo">
-                            <input id="contato-autorizado" name="contato_autorizado" type="checkbox" required>
+                            <input id="contato-autorizado" aria-describedby="erro-contato-autorizado" name="contato_autorizado" type="checkbox">
                             <label for="contato-autorizado">Autorizo o contato da equipe para analisar esta oferta. *</label>
+                            <p class="erro-campo" id="erro-contato-autorizado"></p>
                         </div>
                         <div class="campo">
                             <input id="destaque-autorizado" name="destaque_autorizado" type="checkbox">
@@ -158,9 +165,10 @@
                         </div>
                     </fieldset>
                     <div class="botoes-formulario">
-                        <button type="button">Enviar oferta</button>
+                        <button type="submit">Enviar oferta</button>
                         <button type="reset">Limpar formulário</button>
                     </div>
+                    <p id="retorno-oferta" role="status"></p>
                 </form>
             </section>
 

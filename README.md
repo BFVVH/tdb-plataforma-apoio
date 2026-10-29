@@ -29,7 +29,10 @@ Nossa proposta combina uma área pública de captação com uma futura área int
 - Validação de seleção de necessidades, tipos de apoio e autorização de contato na oferta.
 - Links dos cartões selecionam a necessidade e o tipo de apoio correspondentes e levam ao formulário, preservando escolhas anteriores.
 - Botões de limpar removem os dados e os avisos de validação.
-- Fonte Inter carregada localmente pela pasta `fonts`.
+- Fonte Inter carregada localmente pela pasta `fonts`, com preload nas sete páginas para antecipar o carregamento.
+- Visual atualizado com cartões, formulários e botões padronizados, preservando verde e laranja.
+- Switch de modo escuro nas sete páginas, com preferência salva no navegador quando o armazenamento está disponível.
+- Tema escuro em tons de cinza com um toque discreto de verde, aplicado também a campos, avisos e navegação.
 
 | Página | Objetivo |
 | --- | --- |
@@ -85,7 +88,7 @@ Para clonar, tenha o Git instalado no computador. Os comandos abaixo são para o
 
 Se preferir baixar sem Git, acesse o repositório no GitHub, clique em **Code > Download ZIP**, extraia o arquivo e abra `index.html`. Mantenha a estrutura de pastas para que as imagens e o CSS carreguem corretamente.
 
-Não é necessário instalar dependências nem iniciar um servidor.
+Não é necessário instalar dependências nem iniciar um servidor. Para utilizar as interações, mantenha o JavaScript habilitado. A preferência de tema é salva por origem;
 
 ## Como testar as interações
 
@@ -94,6 +97,9 @@ Não é necessário instalar dependências nem iniciar um servidor.
 3. Em **Quero apoiar**, clique em um dos links dos cartões e confira as opções marcadas no formulário.
 4. Tente enviar uma oferta sem selecionar necessidade, tipo de apoio ou autorização de contato; confira os avisos.
 5. Use **Limpar formulário** para remover os dados e as mensagens.
+6. Alterne o switch **Modo escuro** e navegue entre as páginas para conferir a preferência salva. 
+
+Se o GitHub Pages exibir estilos antigos depois de uma atualização, recarregue a página com **Ctrl + Shift + R**.
 
 O layout foi conferido nas sete páginas em larguras de 320, 390, 480, 768, 991, 992, 1300 e 1440px.
 
@@ -106,7 +112,9 @@ O layout foi conferido nas sete páginas em larguras de 320, 390, 480, 768, 991,
 
 - HTML5 para a estrutura e o conteúdo.
 - CSS3 em arquivo externo para o visual e a responsividade.
-- JavaScript em arquivo externo para o menu, as validações e a seleção de apoio.
+- JavaScript em arquivos externos para o menu, as validações, a seleção de apoio e a troca de tema.
+- CSS custom properties para compartilhar as cores dos temas claro e escuro.
+- LocalStorage para lembrar a preferência de tema no navegador.
 - Git e GitHub para versionamento e colaboração.
 
 ## Organização das pastas
@@ -125,9 +133,11 @@ tdb-plataforma-apoio/
 ├── css/
 │   └── style.css
 ├── js/
-│   └── script.js
+│   ├── script.js
+│   └── tema.js
 ├── fonts/
-│   └── inter.ttf
+│   ├── inter.ttf
+│   └── OFL.txt
 └── assets/
     ├── imagens/
     │   ├── logo-tdb.png
@@ -152,13 +162,25 @@ O visual mantém verde `#B5BD00` e laranja `#F28C00` como cores principais, com 
 
 As media queries ajustam colunas, imagens, títulos e espaçamentos. No tablet, a marca fica à esquerda e o botão do menu à direita. No celular, a marca fica centralizada, com o botão abaixo à esquerda. No desktop, os links permanecem visíveis.
 
-O CSS inclui reset de margens e padding, `box-sizing: border-box`, estilos compartilhados e regras para os erros dos formulários.
+O CSS inclui reset de margens e padding, `box-sizing: border-box`, estilos compartilhados e regras para os erros dos formulários. A apresentação usa cartões com bordas arredondadas, sombras discretas e uma hierarquia de títulos e espaçamentos padronizada.
+
+### Temas claro e escuro
+
+O arquivo `js/tema.js` recupera a preferência salva antes do CSS e define `data-tema` no elemento `html`. O CSS utiliza esse atributo para alterar as variáveis de cor. O switch informa seu estado por `role="switch"` e `aria-checked` e reserva espaço no cabeçalho antes da ativação, evitando deslocar o menu.
+
+A escolha é armazenada em `localStorage`. Se o navegador bloquear o armazenamento, a alternância continua funcionando na página atual. Os ícones mantêm contraste no tema escuro: o GitHub é clareado e o LinkedIn preserva o desenho azul e branco.
+
+### Fonte local
+
+A Inter variável cobre os pesos de 100 a 900 e é carregada com `@font-face`. Os HTML usam `preload` para iniciar o download mais cedo. O `font-display: block` aguarda brevemente a fonte para reduzir a troca visível da fonte reserva; em conexões lentas, o texto pode demorar um pouco a aparecer. A licença acompanha o arquivo em `fonts/OFL.txt`.
 
 <hr>
 <img src="assets/imagens/tdb.jpg" alt="Imagem usada na apresentação da ONG" width="500">
 
 
 ## Equipe e contato
+
+Turma **1TDSPA**. Para contato com os autores, utilize os perfis do LinkedIn abaixo.
 
 | Foto | Integrante | RM | GitHub | LinkedIn |
 | --- | --- | --- | --- | --- |

@@ -1,6 +1,5 @@
-/* Este arquivo CSS foi estruturado com AUXILIO de IA, mas nós analisamos, aprendemos elementos e estrutura e alteramos conforme a nossa visão.*/
-
-/* registra a fonte Inter*/
+/* Este arquivo CSS foi estruturado com AUXILIO de IA, mas nós analisamos, aprendemos elementos e estrutura e modificamos conforme a nossa visão.
+   Identidade: verde e laranja da Turma do Bem, com Inter local. */
 @font-face {
     font-family: "Inter";
     src: url("../fonts/inter.ttf") format("truetype");
@@ -9,10 +8,17 @@
     font-display: swap;
 }
 
-/* Cores: verde #B5BD00, laranja #F28C00, branco e cinza. Foi baseado nas cores oficiais da Turma do Bem.*/
-/* Base do site */
-/* Reset: remove os recuos padrão; os espaçamentos são definidos nas regras abaixo.
-   border-box inclui padding e borda na largura definida. */
+/* Base e cores compartilhadas */
+:root {
+    --verde: #B5BD00;
+    --laranja: #F28C00;
+    --titulo: #253C32;
+    --texto: #4D5952;
+    --borda: #DFE5DC;
+    --fundo: #F6F7F2;
+    --sombra: 0 8px 28px rgba(37, 60, 50, 0.05);
+}
+
 *,
 *::before,
 *::after {
@@ -21,186 +27,197 @@
     box-sizing: border-box;
 }
 
-/* Define a fonte, a cor e o espaçamento entre linhas de todo o site. */
 body {
-    margin: 0;
     font-family: "Inter", Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
-    color: #444444;
-    background-color: #FFFFFF;
+    line-height: 1.7;
+    color: var(--texto);
+    background-color: var(--fundo);
 }
 
-/* Centraliza o conteúdo. A largura cresce até o limite de 1100px. */
 .container,
 main {
     width: 92%;
-    max-width: 1100px;
+    max-width: 1180px;
     margin: 0 auto;
 }
 
 main {
-    padding: 32px 0;
+    padding: 40px 0 56px;
+    overflow-wrap: anywhere;
 }
 
-/* Padroniza os títulos; as regras abaixo definem tamanhos por nível. */
 h1,
 h2,
 h3 {
-    margin-top: 0;
-    line-height: 1.3;
+    color: var(--titulo);
+    line-height: 1.2;
+    letter-spacing: -0.035em;
 }
 
 h1 {
-    margin-bottom: 0.67em;
-    font-size: 34px;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 25px;
-    margin-bottom: 16px;
+    font-size: 28px;
+    font-weight: 750;
+    margin-bottom: 18px;
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 21px;
     margin-bottom: 12px;
 }
 
 p {
-    margin: 0 0 16px;
+    margin-bottom: 16px;
 }
 
-/* Mantém o recuo dos marcadores e a separação das listas de conteúdo. */
 ul,
 ol {
-    padding-left: 40px;
+    padding-left: 24px;
     margin: 16px 0;
 }
 
-dl {
-    margin: 16px 0;
+li {
+    margin-bottom: 8px;
 }
 
 a {
     color: #8A4800;
-    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
 }
 
 a:hover {
-    color: #444444;
+    color: var(--titulo);
 }
 
-/* Evita que imagens ultrapassem a caixa e mantém sua proporção. */
+:focus-visible {
+    outline: 3px solid #8A4800;
+    outline-offset: 4px;
+}
+
 img {
     max-width: 100%;
     height: auto;
 }
 
 section {
-    margin-bottom: 32px;
+    margin-bottom: 36px;
 }
 
 hr {
     border: 0;
-    border-top: 1px solid #DDDDDD;
-    margin: 28px 0;
+    border-top: 1px solid var(--borda);
+    margin: 32px 0;
 }
 
-/* Cabeçalho e menu compartilhados entre todas as páginas. */
+/* Cabeçalho e navegação */
 .cabecalho {
-    border-top: 12px solid #B5BD00;
-    border-bottom: 1px solid #DDDDDD;
-    padding: 20px 0;
+    padding: 22px 0;
+    border-top: 6px solid var(--verde);
+    border-bottom: 1px solid var(--borda);
+    background-color: #FFFFFF;
 }
 
-/* Flexbox alinha marca e menu e permite outra linha quando falta espaço. */
 .cabecalho-conteudo {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24px;
+    gap: 22px 28px;
 }
 
-/* Impede que o logo encolha para abrir espaço para o menu. */
 .marca {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     flex-shrink: 0;
-    color: #444444;
+    color: var(--titulo);
     text-decoration: none;
 }
 
-/* Nome da plataforma ao lado da logo da ONG. */
+.marca-logo {
+    display: block;
+    width: 72px;
+    flex-shrink: 0;
+}
+
 .marca-texto {
     display: block;
+    min-width: 0;
 }
 
 .marca-nome {
     display: block;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 23px;
+    font-weight: 800;
     line-height: 1.3;
+    letter-spacing: -0.04em;
 }
 
 .marca-destaque {
-    color: #F28C00;
+    color: #C96900;
 }
 
 .marca-subtitulo {
     display: block;
-    font-size: 12px;
-    font-weight: normal;
+    font-size: 11px;
+    margin-top: 3px;
 }
 
-/* O menu vai para a linha seguinte se não couber junto da marca. */
 .cabecalho nav {
-    flex: 1 1 700px;
+    flex: 1 1 640px;
     min-width: 0;
 }
 
-/* Pequeno ajuste visual para centralizar a logo com o nome e o subtítulo. */
-.marca-logo {
-    display: block;
-    width: 90px;
-    flex-shrink: 0;
-    position: relative;
-    top: -4px;
-}
-
-/* Organiza os links em linha. wrap permite uma nova linha se faltar espaço. */
 .menu {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 16px;
+    justify-content: flex-end;
+    gap: 6px;
     list-style: none;
     padding: 0;
+    margin: 0;
+    font-size: 13px;
+}
+
+.menu li {
     margin: 0;
 }
 
 .menu a {
-    display: inline-block;
-    padding: 6px 0;
-    color: #444444;
-    font-weight: bold;
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--titulo);
+    font-weight: 600;
     text-decoration: none;
-    border-bottom: 3px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
-/* Destaca o link sob o mouse e o link da página atual com uma linha laranja. */
-.menu a:hover,
+.menu a:hover {
+    background-color: #F4F6E8;
+}
+
 .menu a[aria-current="page"] {
-    border-bottom-color: #F28C00;
+    border-bottom-color: var(--laranja);
+    background-color: #FFF3E2;
+    color: #854300;
 }
 
-/* Apresentação de cada página */
+/* Apresentação: destaque suave em verde, sem mudar a identidade */
 .hero,
 .introducao-integrantes {
-    padding: 28px;
-    background-color: #F5F5F5;
-    border-left: 6px solid #B5BD00;
-    border-radius: 8px;
+    padding: 44px;
+    border: 1px solid #DFE5C7;
+    border-left: 6px solid var(--verde);
+    border-radius: 20px;
+    background: linear-gradient(115deg, #F0F3DD, #FCFDF7);
 }
 
 .hero .container {
@@ -208,96 +225,131 @@ hr {
 }
 
 .hero-texto {
+    max-width: 780px;
     font-size: 18px;
-}
-
-/* Cards, histórias e perguntas frequentes */
-.integrante {
-    padding: 24px;
+    line-height: 1.8;
     margin-bottom: 24px;
-    border: 1px solid #DDDDDD;
-    border-radius: 8px;
-    background-color: #F5F5F5;
 }
 
-/* Coloca a imagem ao lado do texto. gap é o espaço entre os dois. */
+.hero p:last-child,
+.introducao-integrantes p:last-child {
+    margin-bottom: 0;
+}
+
+/* Cartões e seções de conteúdo */
+.cartao,
+.integrante,
+.colaborador,
+.necessidade {
+    background-color: #FFFFFF;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+}
+
 .cartao {
-    padding: 24px 0;
-    margin-bottom: 32px;
-    border-bottom: 1px solid #DDDDDD;
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 36px;
+    padding: 28px;
+    margin-bottom: 36px;
 }
 
 .cartao > img {
-    width: 32%;
+    display: block;
+    width: 36%;
+    border-radius: 12px;
 }
 
-/* O texto ocupa o espaço restante. min-width permite que ele encolha sem vazar. */
-.cartao-conteudo {
+.cartao-conteudo,
+.integrante-conteudo {
     flex: 1;
     min-width: 0;
 }
 
 .cartao-conteudo img {
     display: block;
-    width: 260px;
-    margin: 16px 0;
+    width: 300px;
+    margin: 20px 0;
+    border-radius: 12px;
 }
 
-/* Organiza os grupos de cards lado a lado com espaço de 20px. */
+.proposta-projeto,
+.contexto-projeto,
+.fluxo-projeto,
+.tecnologias-projeto,
+.roadmap-projeto,
+.evolucao-projeto,
+.historias-impacto,
+.convite-apoio,
+.informacoes-contato,
+.duvidas-contato {
+    padding: 28px 32px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background-color: #FFFFFF;
+}
+
+.proposta-projeto p:last-child,
+.convite-apoio p:last-child,
+.informacoes-contato p:last-child,
+.duvidas-contato p:last-child {
+    margin-bottom: 0;
+}
+
 .cards-colaboradores,
 .cards-necessidades {
     display: flex;
     gap: 20px;
 }
 
-/* Os cards dividem a largura disponível com flex: 1. */
 .colaborador,
 .necessidade {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     min-width: 0;
-    padding: 20px 0;
-    border-top: 3px solid #B5BD00;
+    padding: 26px;
+    border-top: 4px solid var(--verde);
 }
 
 .necessidade {
-    border-top-color: #F28C00;
+    border-top-color: var(--laranja);
 }
 
-/* Perguntas separadas por linhas, sem repetir o fundo dos cards. */
-.pergunta-frequente {
-    padding: 20px 0;
-    border-bottom: 1px solid #DDDDDD;
+.necessidade > a {
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 8px;
+    font-weight: 650;
 }
 
-/* Foto à esquerda e informações à direita, alinhadas ao centro. */
+/* Equipe: fotos e perfis com o mesmo tratamento visual */
 .integrante {
     display: flex;
     align-items: center;
     gap: 32px;
+    padding: 28px;
+    margin-bottom: 24px;
 }
 
-/* Foto maior; object-fit evita deformar a imagem. */
 .integrante > img {
-    width: 220px;
-    height: 220px;
-    flex-shrink: 0;
+    display: block;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 0;
+    flex-shrink: 0;
+    border-radius: 14px;
 }
 
-.integrante-conteudo {
-    flex: 1;
-    min-width: 0;
+.informacao-integrante {
+    margin-bottom: 6px;
 }
 
-/* Ícones locais dos perfis, com área de clique confortável. */
 .links-integrantes {
     display: flex;
-    gap: 12px;
+    gap: 10px;
+    margin-top: 18px;
 }
 
 .links-integrantes a {
@@ -306,45 +358,61 @@ hr {
     justify-content: center;
     width: 44px;
     height: 44px;
-    border: 1px solid #DDDDDD;
-    border-radius: 6px;
-    background-color: #FFFFFF;
+    background-color: #F6F7F2;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
 }
 
 .links-integrantes a:hover {
-    background-color: #FFF4E5;
-    border-color: #F28C00;
+    border-color: var(--laranja);
+    background-color: #FFF3E2;
 }
 
 .icone-social {
     display: block;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
 }
 
-/* Botões e avisos */
-/* Compartilha o visual entre links com classe botao e botões de formulário. */
+/* Botões: laranja preservado inclusive em dispositivos de toque */
 .botao,
 button {
-    display: inline-block;
-    padding: 12px 18px;
-    border: 1px solid #F28C00;
-    border-radius: 6px;
-    color: #333333;
-    background-color: #F28C00;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    min-height: 46px;
+    border: 1px solid var(--laranja);
+    border-radius: 10px;
+    color: #302C21;
+    background-color: var(--laranja);
     font: inherit;
-    font-weight: bold;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
     text-decoration: none;
     cursor: pointer;
 }
 
-.botao:hover,
-button:hover {
-    color: #333333;
-    background-color: #FFAE38;
+button[type="reset"] {
+    border-color: var(--borda);
+    background-color: #FFFFFF;
+    color: var(--titulo);
 }
 
-/* Deixa cinza os botões que ainda não possuem envio ou consulta real. */
+@media (hover: hover) and (pointer: fine) {
+    .botao:hover,
+    button:hover {
+        color: #302C21;
+        background-color: #FFAE38;
+    }
+
+    button[type="reset"]:hover {
+        background-color: #F0F3E8;
+    }
+}
+
 button:disabled {
     background-color: #E5E5E5;
     border-color: #CCCCCC;
@@ -354,183 +422,108 @@ button:disabled {
 
 .aviso-prototipo {
     padding: 20px;
-    margin-bottom: 28px;
-    border-left: 5px solid #F28C00;
-    background-color: #FFF4E5;
+    border-left: 4px solid var(--laranja);
+    border-radius: 10px;
+    background-color: #FFF3E2;
 }
 
 .aviso-prototipo p {
     margin-bottom: 0;
 }
 
+/* Atalhos da página de apoio e resultados */
 .menu-apoio ul {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 10px;
     padding: 0;
-    margin-bottom: 28px;
+    margin: 0 0 32px;
     list-style: none;
 }
 
-/* Indicadores e etapas de acompanhamento */
-/* Resultados lado a lado; cada número ganha destaque. */
+.menu-apoio li {
+    margin: 0;
+}
+
+.menu-apoio a {
+    display: block;
+    padding: 9px 16px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: var(--titulo);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu-apoio a:hover {
+    background-color: #F0F3DD;
+    border-color: #A6AD6B;
+}
+
 .indicadores {
     display: flex;
-    gap: 32px;
-    padding: 24px 0;
-    border-top: 1px solid #DDDDDD;
-    border-bottom: 1px solid #DDDDDD;
+    gap: 20px;
+    margin: 0;
 }
 
 .indicadores > div {
     flex: 1;
-}
-
-.indicadores dd {
-    margin: 8px 0 0;
-    font-size: 32px;
-    font-weight: bold;
+    min-width: 0;
+    padding: 26px;
+    border: 1px solid #DEE5C5;
+    border-radius: 14px;
+    background-color: #F0F3DD;
 }
 
 dt {
-    font-weight: bold;
+    color: var(--titulo);
+    font-weight: 650;
 }
 
 dd {
     margin: 0 0 16px;
 }
 
-li {
-    margin-bottom: 8px;
+.indicadores dd {
+    margin: 8px 0 0;
+    color: var(--titulo);
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
 }
 
 .etapas-oferta {
     padding-left: 24px;
 }
 
-/* Formulários */
-form,
-.formulario-consulta {
-    padding: 24px;
-    margin-bottom: 20px;
-    background-color: #F5F5F5;
-    border: 1px solid #DDDDDD;
-    border-radius: 8px;
-}
-
-fieldset {
-    min-width: 0;
-    padding: 20px;
-    margin: 0 0 24px;
-    border: 1px solid #CCCCCC;
-}
-
-legend {
-    padding: 0 8px;
-    font-weight: bold;
-}
-
-.campo {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
-/* Padroniza os campos. font: inherit usa a fonte definida no restante do site. */
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 8px;
-    border: 1px solid #999999;
-    border-radius: 4px;
+/* FAQ: perguntas com área de clique ampla e indicação nativa de abertura */
+.pergunta-frequente {
+    padding: 22px 26px;
+    margin-bottom: 12px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
     background-color: #FFFFFF;
-    color: #444444;
-    font: inherit;
 }
 
-textarea {
-    resize: vertical;
-}
-
-/* O checkbox usa seu tamanho natural, em vez de ocupar toda a linha. */
-input[type="checkbox"] {
-    width: auto;
-    margin-right: 8px;
-}
-
-/* O sinal + seleciona o label logo após o checkbox, deixando o texto ao lado. */
-input[type="checkbox"] + label {
-    display: inline;
-    font-weight: normal;
-}
-
-/* Alinha os botões com espaço entre eles e permite quebrar a linha. */
-.botoes-formulario {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-/* Rodapé */
-.rodape {
-    padding: 24px 0;
-    border-top: 6px solid #B5BD00;
-    background-color: #F5F5F5;
-    text-align: center;
-}
-
-.rodape p {
-    margin: 0;
-}
-
-/* Ajustes para as duas faixas desktop */
-/* Estas regras passam a valer em janelas com pelo menos 992px de largura. */
-@media (min-width: 992px) {
-    .menu {
-        font-size: 14px;
-    }
-
-    .hero,
-    .introducao-integrantes {
-        padding: 32px;
-    }
-}
-
-/* Em 1300px ou mais, amplia título, menu e espaçamentos para telas grandes. */
-@media (min-width: 1300px) {
-    main {
-        padding: 40px 0;
-    }
-
-    .menu {
-        font-size: 16px;
-    }
-
-    h1 {
-        font-size: 38px;
-    }
-
-    .hero,
-    .introducao-integrantes {
-        padding: 40px;
-    }
-}
-
-/* FAQ: details abre e fecha a resposta */
 .pergunta-frequente summary {
-    font-size: 20px;
-    font-weight: bold;
+    color: var(--titulo);
+    font-size: 18px;
+    font-weight: 650;
     cursor: pointer;
 }
 
-/* A seta nativa indica se a pergunta está aberta ou fechada. */
+.pergunta-frequente summary::marker {
+    color: #7A8000;
+}
+
 .pergunta-frequente summary:hover {
     color: #8A4800;
+}
+
+.pergunta-frequente[open] {
+    border-color: #A6AD6B;
 }
 
 .pergunta-frequente[open] summary {
@@ -541,11 +534,164 @@ input[type="checkbox"] + label {
     margin-bottom: 0;
 }
 
-/* Tablet: mantém a identidade visual e redistribui os cartões em duas colunas. */
+/* Formulários e validação: reaproveita os IDs e classes usados pelo JS */
+form,
+.formulario-consulta {
+    padding: 32px;
+    margin-bottom: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: var(--sombra);
+}
+
+fieldset {
+    min-width: 0;
+    padding: 22px;
+    margin-bottom: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+}
+
+fieldset fieldset {
+    background-color: #FAFBF7;
+}
+
+legend {
+    max-width: 100%;
+    padding: 0 8px;
+    color: var(--titulo);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--titulo);
+    font-size: 14px;
+    font-weight: 650;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 6px;
+    border: 1px solid #B9C4B9;
+    border-radius: 8px;
+    background-color: #FDFEFC;
+    color: var(--titulo);
+    font: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #69756B;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #677039;
+    outline-offset: 2px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+    accent-color: #687329;
+}
+
+input[type="checkbox"] + label {
+    display: inline;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.botoes-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+#formulario-contato .campo-invalido,
+#form-oferta .campo-invalido {
+    border: 2px solid #B42318;
+}
+
+.erro-campo {
+    color: #B42318;
+    font-size: 14px;
+    margin: 0;
+}
+
+#retorno-contato,
+#retorno-oferta {
+    margin: 18px 0 0;
+    color: var(--titulo);
+    font-weight: 600;
+}
+
+.erro-campo:empty,
+#retorno-contato:empty,
+#retorno-oferta:empty {
+    display: none;
+}
+
+/* Rodapé */
+.rodape {
+    padding: 30px 0;
+    border-top: 4px solid var(--verde);
+    background-color: #FFFFFF;
+    text-align: center;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.rodape p {
+    margin: 0;
+}
+
+/* Menu interativo: sem JS, os links seguem disponíveis. */
+.menu-toggle {
+    display: none;
+}
+
+/* Desktop amplo */
+@media (min-width: 1300px) {
+    main {
+        padding-top: 48px;
+    }
+
+    .hero,
+    .introducao-integrantes {
+        padding: 56px;
+    }
+
+    .hero h1,
+    .introducao-integrantes h1 {
+        font-size: 52px;
+    }
+}
+
+/* Tablet: marca à esquerda, botão à direita e cartões em duas colunas. */
 @media (max-width: 991px) {
     .cabecalho-conteudo {
-        justify-content: center;
-        gap: 16px;
+        gap: 18px;
     }
 
     .cabecalho nav {
@@ -554,238 +700,10 @@ input[type="checkbox"] + label {
 
     .menu {
         justify-content: center;
-        gap: 8px 16px;
     }
 
-    .menu li {
-        margin-bottom: 0;
-    }
-
-    .menu a {
-        padding: 10px 0;
-    }
-
-    .cards-colaboradores,
-    .cards-necessidades {
-        flex-wrap: wrap;
-    }
-
-    .colaborador,
-    .necessidade {
-        flex: 1 1 calc(50% - 10px);
-    }
-
-    .indicadores {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .indicadores > div {
-        flex: 1 1 160px;
-        min-width: 0;
-    }
-
-    .menu-apoio ul {
-        flex-wrap: wrap;
-        gap: 12px 24px;
-    }
-}
-
-/* Celular: conteúdo em uma coluna, com fotos proporcionais e leitura confortável. */
-@media (max-width: 767px) {
-    main {
-        padding: 24px 0;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    h2 {
-        font-size: 23px;
-    }
-
-    .hero,
-    .introducao-integrantes {
-        padding: 20px;
-    }
-
-    .hero-texto {
-        font-size: 16px;
-    }
-
-    .cartao,
-    .integrante {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 20px;
-    }
-
-    .cartao > img {
-        width: 100%;
-        max-width: 420px;
-        align-self: center;
-    }
-
-    .integrante > img {
-        width: 220px;
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: 1;
-        align-self: center;
-    }
-
-    .colaborador,
-    .necessidade {
-        flex-basis: 100%;
-    }
-
-    .marca {
-        max-width: 100%;
-        flex-shrink: 1;
-    }
-
-    .marca-texto {
-        min-width: 0;
-    }
-
-    main,
-    .rodape {
-        overflow-wrap: anywhere;
-    }
-
-    form,
-    .formulario-consulta {
-        padding: 20px;
-    }
-
-    fieldset {
-        padding: 16px;
-    }
-
-    legend {
-        max-width: 100%;
-    }
-}
-
-/* Telas menores: reduz recuos para preservar espaço nos formulários aninhados. */
-@media (max-width: 480px) {
-    .cabecalho {
-        padding: 16px 0;
-    }
-
-    .marca {
-        gap: 10px;
-    }
-
-    .marca-logo {
-        width: 64px;
-    }
-
-    .marca-nome {
-        font-size: 22px;
-    }
-
-    .menu {
-        gap: 4px 12px;
-        font-size: 14px;
-    }
-
-    .menu a {
-        padding: 10px 0;
-    }
-
-    h1 {
-        font-size: 26px;
-    }
-
-    .hero,
-    .introducao-integrantes,
-    .integrante,
-    .aviso-prototipo {
-        padding: 16px;
-    }
-
-    form,
-    .formulario-consulta {
-        padding: 12px;
-    }
-
-    fieldset {
-        padding: 10px;
-        margin-bottom: 16px;
-    }
-
-    fieldset fieldset {
-        padding: 8px;
-    }
-
-    legend {
-        padding: 0 4px;
-    }
-
-    .indicadores {
-        flex-direction: column;
-    }
-
-    .indicadores > div {
-        flex: 0 1 auto;
-    }
-
-    .indicadores dd {
-        font-size: 28px;
-    }
-
-    .menu-apoio ul {
-        flex-direction: column;
-        gap: 4px;
-    }
-
-    .botoes-formulario {
-        flex-direction: column;
-    }
-
-    .botoes-formulario button,
-    .formulario-consulta button {
-        width: 100%;
-    }
-
-    .pergunta-frequente summary {
-        font-size: 18px;
-    }
-}
-
-/* Menu compartilhado: o desktop mantém os links visíveis. */
-.menu-toggle {
-    display: none;
-}
-
-/* Evita hover persistente após o toque; com mouse, usa um laranja mais claro. */
-.menu-toggle:hover {
-    background-color: #F28C00;
-    border-color: #F28C00;
-    color: #333333;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .menu-toggle:hover {
-        background-color: #FFAE38;
-    }
-}
-
-.menu-toggle:focus-visible,
-#menu-principal a:focus-visible {
-    outline: 3px solid #8A4800;
-    outline-offset: 4px;
-}
-
-@media (max-width: 991px) {
     .menu-interativo .menu-toggle {
         display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        min-height: 44px;
     }
 
     .menu-interativo #menu-principal {
@@ -798,30 +716,60 @@ input[type="checkbox"] + label {
 
     .menu-interativo #menu-principal .menu {
         flex-direction: column;
-        gap: 4px;
+        gap: 6px;
+        padding: 12px;
+        border: 1px solid var(--borda);
+        border-radius: 12px;
+        background-color: #FAFBF7;
     }
 
     .menu-interativo #menu-principal a {
-        display: block;
-        padding: 10px 12px;
+        padding: 12px 16px;
+    }
+
+    .cards-colaboradores,
+    .cards-necessidades,
+    .indicadores {
+        flex-wrap: wrap;
+    }
+
+    .colaborador,
+    .necessidade {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .indicadores > div {
+        flex: 1 1 180px;
+    }
+
+    .hero,
+    .introducao-integrantes {
+        padding: 32px;
     }
 }
 
-/* Tablet: marca e botão nas extremidades do cabeçalho. */
-@media (min-width: 768px) and (max-width: 991px) {
-    .cabecalho-conteudo.menu-interativo {
-        justify-content: space-between;
-    }
-}
-
-/* Celular: marca centralizada e botão alinhado à esquerda na linha seguinte. */
+/* Celular: marca centralizada, botão à esquerda e conteúdo em uma coluna. */
 @media (max-width: 767px) {
+    main {
+        padding: 24px 0 36px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
     .cabecalho-conteudo.menu-interativo {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .menu-interativo .marca {
+    .marca {
+        max-width: 100%;
+        flex-shrink: 1;
         align-self: center;
     }
 
@@ -833,23 +781,156 @@ input[type="checkbox"] + label {
         flex: 0 1 auto;
         width: 100%;
     }
+
+    .hero,
+    .introducao-integrantes {
+        padding: 26px;
+        border-radius: 14px;
+    }
+
+    .hero-texto {
+        font-size: 16px;
+    }
+
+    .cartao,
+    .integrante {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+        padding: 24px;
+    }
+
+    .cartao > img {
+        width: 100%;
+        max-width: 420px;
+        align-self: center;
+    }
+
+    .integrante > img {
+        width: 180px;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        align-self: center;
+    }
+
+    .colaborador,
+    .necessidade {
+        flex-basis: 100%;
+    }
+
+    .proposta-projeto,
+    .contexto-projeto,
+    .fluxo-projeto,
+    .tecnologias-projeto,
+    .roadmap-projeto,
+    .evolucao-projeto,
+    .historias-impacto,
+    .convite-apoio,
+    .informacoes-contato,
+    .duvidas-contato {
+        padding: 24px;
+    }
+
+    form,
+    .formulario-consulta {
+        padding: 22px;
+    }
+
+    fieldset {
+        padding: 16px;
+    }
 }
 
+/* Celulares menores: recuos menores nos formulários, sem perder legibilidade. */
+@media (max-width: 480px) {
+    .cabecalho {
+        padding: 18px 0;
+    }
 
-/* Validação dos formulários de contato e oferta. */
-#formulario-contato .campo-invalido,
-#form-oferta .campo-invalido {
-    border: 2px solid #B42318;
-}
+    .marca-logo {
+        width: 60px;
+    }
 
-.erro-campo {
-    color: #B42318;
-    font-size: 14px;
-    margin: 0;
-}
+    .marca-nome {
+        font-size: 22px;
+    }
 
-.erro-campo:empty,
-#retorno-contato:empty,
-#retorno-oferta:empty {
-    display: none;
+    .marca-subtitulo {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .hero,
+    .introducao-integrantes,
+    .cartao,
+    .integrante,
+    .colaborador,
+    .necessidade,
+    .pergunta-frequente,
+    .proposta-projeto,
+    .contexto-projeto,
+    .fluxo-projeto,
+    .tecnologias-projeto,
+    .roadmap-projeto,
+    .evolucao-projeto,
+    .historias-impacto,
+    .convite-apoio,
+    .informacoes-contato,
+    .duvidas-contato {
+        padding: 20px;
+    }
+
+    form,
+    .formulario-consulta {
+        padding: 14px;
+    }
+
+    fieldset {
+        padding: 12px;
+        margin-bottom: 18px;
+    }
+
+    fieldset fieldset {
+        padding: 8px;
+    }
+
+    legend {
+        padding: 0 4px;
+        font-size: 14px;
+    }
+
+    .indicadores {
+        flex-direction: column;
+    }
+
+    .indicadores > div {
+        flex: 0 1 auto;
+        padding: 22px;
+    }
+
+    .botoes-formulario {
+        flex-direction: column;
+    }
+
+    .botoes-formulario button,
+    .formulario-consulta button {
+        width: 100%;
+    }
+
+    .menu-apoio a {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    .pergunta-frequente summary {
+        font-size: 16px;
+    }
 }

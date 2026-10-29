@@ -1,3 +1,6 @@
+// esse arquivo javascript teve auxilio de IA, mas foi revisado, estruturado, e modificado pelo grupo.
+
+
 // Controla a abertura e o fechamento do menu em todas as páginas.
 const botaoMenu = document.querySelector(".menu-toggle");
 const menuPrincipal = document.querySelector("#menu-principal");
@@ -96,6 +99,37 @@ if (formularioOferta) {
     const tiposOferta = formularioOferta.querySelector("#tipos-oferta");
     const contatoAutorizado = formularioOferta.querySelector("#contato-autorizado");
     const retornoOferta = formularioOferta.querySelector("#retorno-oferta");
+
+    // querySelectorAll encontra todos os links com data-necessidade dentro dos cartões .necessidade.
+    const linksApoio = document.querySelectorAll(".necessidade a[data-necessidade]");
+
+    // forEach percorre os links e adiciona um evento de clique a cada um.
+    // A variável link representa o cartão atual, permitindo reaproveitar a mesma lógica.
+    linksApoio.forEach(function (link) {
+        link.addEventListener("click", function (evento) {
+            // impede o salto padrão do href
+            evento.preventDefault();
+
+            // dataset.necessidade lê data-necessidade, e dataset.tipo lê data-tipo do link clicado.
+            // O "#" transforma o ID guardado em um seletor: "#" + "apoio-kits" vira "#apoio-kits".
+            // A busca acontece dentro do formulário e encontra os checkboxes correspondentes.
+            const necessidade = formularioOferta.querySelector("#" + link.dataset.necessidade);
+            const tipo = formularioOferta.querySelector("#" + link.dataset.tipo);
+
+            // checked = true marca as opções, sem desmarcar as escolhas anteriores do usuário.
+            necessidade.checked = true;
+            tipo.checked = true;
+
+
+            mostrarErro(necessidadesOferta, "");
+            mostrarErro(tiposOferta, "");
+
+            // Rola a página até a seção do formulário.
+            document.querySelector("#formulario-oferta").scrollIntoView();
+            // Coloca o cursor no nome; preventScroll evita uma segunda rolagem ao receber foco.
+            nomeApoiador.focus({ preventScroll: true });
+        });
+    });
 
     formularioOferta.addEventListener("submit", function (evento) {
         evento.preventDefault();

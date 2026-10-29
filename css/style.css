@@ -5,7 +5,8 @@
     src: url("../fonts/inter.ttf") format("truetype");
     font-weight: 100 900;
     font-style: normal;
-    font-display: swap;
+    /* Aguarda brevemente a Inter para evitar mostrar Arial antes da troca. */
+    font-display: block;
 }
 
 /* Base e cores compartilhadas */
@@ -1004,8 +1005,11 @@ input[type="checkbox"] + label {
     white-space: nowrap;
 }
 
+/* Reserva o espaço do switch antes de o JavaScript ativá-lo.
+   visibility mantém as dimensões, mas impede foco e clique enquanto estiver oculto. */
 .tema-toggle[hidden] {
-    display: none;
+    display: inline-flex;
+    visibility: hidden;
 }
 
 .tema-trilho {

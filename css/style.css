@@ -808,3 +808,20 @@ input[type="checkbox"] + label {
         width: 100%;
     }
 }
+
+
+/* Validação do formulário de contato. */
+#formulario-contato .campo-invalido {
+    border: 2px solid #B42318;
+}
+
+.erro-campo {
+    color: #B42318;
+    font-size: 14px;
+    margin: 0;
+}
+
+.erro-campo:empty,
+#retorno-contato:empty {
+    display: none;
+}

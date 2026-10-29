@@ -39,27 +39,27 @@
 /* O atributo data-tema é alternado pelo JavaScript; os componentes usam estas cores. */
 :root[data-tema="escuro"] {
     color-scheme: dark;
-    --titulo: #EDF3E9;
-    --texto: #C0CCC1;
-    --borda: #36443B;
-    --fundo: #141C18;
-    --superficie: #1E2922;
-    --superficie-suave: #243127;
-    --campo: #17221B;
-    --hover-suave: #32412E;
-    --laranja-suave: #3D3020;
-    --verde-suave: #2B3622;
-    --hero-final: #202C22;
-    --borda-destaque: #49552F;
-    --borda-campo: #617565;
-    --borda-forte: #899657;
-    --placeholder: #A2B2A4;
+    --titulo: #F0F1EF;
+    --texto: #C5C8C5;
+    --borda: #383C39;
+    --fundo: #181A19;
+    --superficie: #232624;
+    --superficie-suave: #292D2A;
+    --campo: #1C1F1D;
+    --hover-suave: #333934;
+    --laranja-suave: #352E25;
+    --verde-suave: #2B302A;
+    --hero-final: #252825;
+    --borda-destaque: #42493D;
+    --borda-campo: #626A64;
+    --borda-forte: #858D78;
+    --placeholder: #A5ADA7;
     --link: #FFC179;
     --erro: #FF9E94;
     --marca-acento: #FFB459;
     --verde-texto: #C4D17D;
     --foco: #C4D17D;
-    --sombra: 0 8px 28px rgba(0, 0, 0, 0.12);
+    --sombra: 0 8px 28px rgba(0, 0, 0, 0.16);
 }
 
 *,
@@ -1041,7 +1041,8 @@ input[type="checkbox"] + label {
     padding: 4px;
 }
 
-:root[data-tema="escuro"] .icone-social {
+/* Clareia apenas o GitHub; o LinkedIn mantém o azul e as letras brancas originais. */
+:root[data-tema="escuro"] .icone-social[src$="github.svg"] {
     filter: brightness(0) invert(1);
 }
 

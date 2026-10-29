@@ -1,16 +1,30 @@
 /* Este arquivo CSS foi estruturado com AUXILIO de IA, mas nós analisamos, aprendemos elementos e estrutura e alteramos conforme a nossa visão.*/
 
+/* registra a fonte Inter*/
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/inter.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Cores: verde #B5BD00, laranja #F28C00, branco e cinza. Foi baseado nas cores oficiais da Turma do Bem.*/
 /* Base do site */
-/* Inclui padding e borda na largura definida, facilitando o cálculo dos tamanhos. */
-* {
+/* Reset: remove os recuos padrão; os espaçamentos são definidos nas regras abaixo.
+   border-box inclui padding e borda na largura definida. */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 /* Define a fonte, a cor e o espaçamento entre linhas de todo o site. */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: #444444;
@@ -38,6 +52,7 @@ h3 {
 }
 
 h1 {
+    margin-bottom: 0.67em;
     font-size: 34px;
 }
 
@@ -53,6 +68,17 @@ h3 {
 
 p {
     margin: 0 0 16px;
+}
+
+/* Mantém o recuo dos marcadores e a separação das listas de conteúdo. */
+ul,
+ol {
+    padding-left: 40px;
+    margin: 16px 0;
+}
+
+dl {
+    margin: 16px 0;
 }
 
 a {

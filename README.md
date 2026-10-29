@@ -2,7 +2,7 @@
 
 https://bfvvh.github.io/tdb-plataforma-apoio/
 
-Projeto acadêmico da turma **1TDSPA**, desenvolvido para a Sprint 1 de Front-End Design Engineering da FIAP.
+Projeto acadêmico da turma **1TDSPA**, desenvolvido nas Sprints 1 e 2 de Front-End Design Engineering da FIAP.
 
 A Rede do Bem é uma plataforma para aproximar a Turma do Bem de pessoas e empresas que querem ajudar. O site apresenta a ONG e as formas de apoio. O visitante pode conhecer resultados, consultar necessidades e preencher uma oferta de apoio.
 
@@ -20,7 +20,16 @@ Nossa proposta combina uma área pública de captação com uma futura área int
 
 ## O que está implementado
 
-Esta sprint contém um **protótipo estático para desktop**, feito com HTML e CSS.
+**Status da Sprint 2:** interface responsiva e interações implementadas em HTML, CSS e JavaScript, reaproveitando as sete páginas da Sprint 1.
+
+- Layout adaptado para celular, tablet e desktop, com media queries.
+- Menu hambúrguer com abertura e fechamento por JavaScript nas sete páginas, em telas de até 991px.
+- Validação dos formulários de contato e oferta pelo JavaScript, sem o atributo `required` do HTML.
+- Mensagens de erro junto aos campos, bordas de destaque e foco no primeiro campo inválido.
+- Validação de seleção de necessidades, tipos de apoio e autorização de contato na oferta.
+- Links dos cartões selecionam a necessidade e o tipo de apoio correspondentes e levam ao formulário, preservando escolhas anteriores.
+- Botões de limpar removem os dados e os avisos de validação.
+- Fonte Inter carregada localmente pela pasta `fonts`.
 
 | Página | Objetivo |
 | --- | --- |
@@ -34,7 +43,11 @@ Esta sprint contém um **protótipo estático para desktop**, feito com HTML e C
 
 Todas as páginas possuem menu principal, a logo da Turma do Bem ao lado do nome Rede do Bem com link para o início e rodapé padronizado. As duas páginas dedicadas à solução são **Impacto e colaboradores** e **Quero apoiar**.
 
-Os botões de envio e consulta são demonstrativos: não enviam nem armazenam dados e não retornam o andamento das ofertas.
+### Limitações do protótipo
+
+Os formulários validam os dados e exibem uma confirmação local. As mensagens de envio representam o fluxo do protótipo: nenhum dado é enviado à ONG, armazenado ou encaminhado por e-mail. Não há backend ou banco de dados nesta etapa.
+
+A consulta de protocolo ainda é apenas visual: o botão não retorna o andamento das ofertas.
 
 ## Como abrir
 
@@ -72,7 +85,17 @@ Para clonar, tenha o Git instalado no computador. Os comandos abaixo são para o
 
 Se preferir baixar sem Git, acesse o repositório no GitHub, clique em **Code > Download ZIP**, extraia o arquivo e abra `index.html`. Mantenha a estrutura de pastas para que as imagens e o CSS carreguem corretamente.
 
-Não é necessário instalar dependências nem iniciar um servidor. O layout foi planejado para desktop, com ajustes em **992 px** e **1300 px**. A adaptação para celulares fica para as próximas etapas.
+Não é necessário instalar dependências nem iniciar um servidor.
+
+## Como testar as interações
+
+1. Em uma janela menor que 992px, clique em **Menu** para abrir e fechar a navegação.
+2. Em **Contato**, tente enviar campos vazios ou um e-mail inválido e depois corrija os dados.
+3. Em **Quero apoiar**, clique em um dos links dos cartões e confira as opções marcadas no formulário.
+4. Tente enviar uma oferta sem selecionar necessidade, tipo de apoio ou autorização de contato; confira os avisos.
+5. Use **Limpar formulário** para remover os dados e as mensagens.
+
+O layout foi conferido nas sete páginas em larguras de 320, 390, 480, 768, 991, 992, 1300 e 1440px.
 
 ## Repositório e visualização
 
@@ -82,7 +105,8 @@ Não é necessário instalar dependências nem iniciar um servidor. O layout foi
 ## Tecnologias
 
 - HTML5 para a estrutura e o conteúdo.
-- CSS3 em arquivo externo para o visual.
+- CSS3 em arquivo externo para o visual e a responsividade.
+- JavaScript em arquivo externo para o menu, as validações e a seleção de apoio.
 - Git e GitHub para versionamento e colaboração.
 
 ## Organização das pastas
@@ -100,6 +124,10 @@ tdb-plataforma-apoio/
 │   └── apoio.html
 ├── css/
 │   └── style.css
+├── js/
+│   └── script.js
+├── fonts/
+│   └── inter.ttf
 └── assets/
     ├── imagens/
     │   ├── logo-tdb.png
@@ -120,7 +148,11 @@ tdb-plataforma-apoio/
 
 O site usa um CSS externo em `css/style.css`, compartilhado por todas as páginas.
 
-O visual utiliza Verde `#B5BD00` e laranja `#F28C00` como cores principais, baseado na identidade oficial da Turma do Bem, fonte Arial e conteúdo centralizado. O site também inclui um cabeçalho com marca (logo e o Título do projeto) + flexbox para o menu de páginas.
+O visual mantém verde `#B5BD00` e laranja `#F28C00` como cores principais, com base na identidade da Turma do Bem, fonte Inter e conteúdo centralizado.
+
+As media queries ajustam colunas, imagens, títulos e espaçamentos. No tablet, a marca fica à esquerda e o botão do menu à direita. No celular, a marca fica centralizada, com o botão abaixo à esquerda. No desktop, os links permanecem visíveis.
+
+O CSS inclui reset de margens e padding, `box-sizing: border-box`, estilos compartilhados e regras para os erros dos formulários.
 
 <hr>
 <img src="assets/imagens/tdb.jpg" alt="Imagem usada na apresentação da ONG" width="500">
@@ -137,15 +169,15 @@ O visual utiliza Verde `#B5BD00` e laranja `#F28C00` como cores principais, base
 
 ## Uso de Inteligência Artificial e dados fictícios
 
-**A Ferramenta de Inteligência Artificial foi utilizada para AUXILIAR na elaboração, organização e documentação do CSS e na escrita dos dados fictícios apresentados no site.**
+**Foi utilizada Inteligência Artificial para auxiliar na elaboração e revisão do CSS responsivo, na implementação e explicação do JavaScript, na documentação e na escrita dos dados fictícios. O grupo revisou e modificou o código durante o desenvolvimento.**
 
 As histórias, os nomes dos apoiadores de exemplo (Horizonte Dental, Marina Costa e Rota Solidária), as quantidades, as necessidades, as datas e os resultados demonstrativos não representam registros reais da ONG. Eles servem para ilustrar o fluxo da proposta acadêmica.
 
 
 ## Próximas etapas
 
-1. Sprint 2: adaptar o layout para outras telas e adicionar interatividade com JavaScript.
-2. Etapas futuras: desenvolver o painel da ONG, o armazenamento de ofertas e o acompanhamento privado pelo apoiador.
+1. Desenvolver o backend, o armazenamento de ofertas e o envio real dos formulários.
+2. Implementar o painel da ONG e o acompanhamento privado por protocolo.
 3. Implementar automações, indicadores e sugestões de IA, com revisão da equipe e dados validados.
 
 
@@ -153,4 +185,5 @@ As histórias, os nomes dos apoiadores de exemplo (Horizonte Dental, Marina Cost
 
 - [Site oficial da Turma do Bem](https://turmadobem.org.br/), referência institucional e visual.
 - GitHub e LinkedIn: marcas representadas pelos ícones dos links sociais.
+- [Inter no Google Fonts](https://fonts.google.com/specimen/Inter), fonte utilizada no site, distribuída sob a SIL Open Font License.
 

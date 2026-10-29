@@ -2,34 +2,25 @@
 const botaoMenu = document.querySelector(".menu-toggle");
 const menuPrincipal = document.querySelector("#menu-principal");
 
+// se ambos o botao o botao e o menu existirem
 if (botaoMenu && menuPrincipal) {
-    const telaMenor = window.matchMedia("(max-width: 991px)");
 
+    // a função serve pra alternar o estado do menu, recebendo true ou false,
+    // adicionando uma classe chamada "aberto" ao nav do menu, pra então
+    // no css ter regras que se aplicam só quando tiver .aberto
     function definirMenuAberto(aberto) {
         menuPrincipal.classList.toggle("aberto", aberto);
         botaoMenu.setAttribute("aria-expanded", String(aberto));
     }
 
-    // Sem JavaScript, os links permanecem visíveis e o botão fica escondido.
+    // adiciona a class menu-interativo ao elemento pai do botao, q é a div
     botaoMenu.parentElement.classList.add("menu-interativo");
 
+    // o botão escuta por um evento de click do mouse e executa a função pra alternar
+    // o estado pro inverso de aberto, que pode ser true ou false naquele momento
+    // dependendo do que ta no aria-expanded
     botaoMenu.addEventListener("click", function () {
         const aberto = botaoMenu.getAttribute("aria-expanded") === "true";
         definirMenuAberto(!aberto);
-    });
-
-    menuPrincipal.addEventListener("keydown", function (evento) {
-        if (evento.key === "Escape" && telaMenor.matches) {
-            definirMenuAberto(false);
-            botaoMenu.focus();
-        }
-    });
-
-    telaMenor.addEventListener("change", function () {
-        // Evita manter um estado aberto antigo ao alternar entre desktop e celular.
-        if (telaMenor.matches && menuPrincipal.contains(document.activeElement)) {
-            botaoMenu.focus();
-        }
-        definirMenuAberto(false);
     });
 }
